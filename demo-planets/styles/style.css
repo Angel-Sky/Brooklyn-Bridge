@@ -3,6 +3,11 @@
   src: url("../fonts/RetroComputer.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
+@font-face {
+  font-family: 'AdobeDevanagari-Regular';
+  src: url("../fonts/AdobeDevanagari-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 * {
   margin: 0;
   padding: 0; }
@@ -27,9 +32,11 @@ body .planets-info-wrapper {
     padding: 2.5% 0 30% 12%; }
     body .planets-info-wrapper .planets-info .overwiev {
       padding-top: 5%;
-      color: white; }
+      color: white;
+      font-family: "AdobeDevanagari-Regular",sans-serif; }
       body .planets-info-wrapper .planets-info .overwiev span {
-        color: hotpink; }
+        color: hotpink;
+        font-family: "AdobeDevanagari-Regular",sans-serif; }
     body .planets-info-wrapper .planets-info .close {
       font-family: "RetroComputer",sans-serif;
       color: red;
@@ -46,7 +53,8 @@ body .planets-info-wrapper {
         color: white;
         font-size: 20px;
         vertical-align: top;
-        margin-bottom: 2%; }
+        margin-bottom: 2%;
+        font-family: "AdobeDevanagari-Regular",sans-serif; }
         body .planets-info-wrapper .planets-info ul li span {
           color: hotpink; }
     body .planets-info-wrapper .planets-info .slider {
