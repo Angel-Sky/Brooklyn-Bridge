@@ -2,12 +2,14 @@
 @font-face {
   font-family: 'AdobeDevanagari-Regular';
   src: url("../AdobeDevanagari-Regular.otf") format("opentype"); }
+
 body #wrapper #sidebar-wrapper {
   background-position: center; }
+
 body #top {
   background-position: center; }
   body #top #links .modal-dialog {
-    background-image: url("../images/pergament.png"); }
+    background-image: url("img/pergament.png"); }
     body #top #links .modal-dialog .modal-content {
       background-color: transparent;
       border: none;
@@ -38,25 +40,26 @@ body #top {
       display: none; }
     .background .bg-mo1 {
       display: block !important; }
-
   body #wrapper #top #links ul li {
     margin-right: 40px; } }
+
 @media (max-width: 768px) {
   body #wrapper #top #logo img {
     max-height: 100px; }
   body #wrapper #top #links ul li {
     margin-right: 20px;
     font-size: 20px; } }
+
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 936px;
     margin: 180px auto; } }
+
 @media (max-width: 425px) {
   .background .bg-mo1 {
     display: none !important; }
   .background .bg-mo {
     display: block !important; }
-
   body #wrapper #top #logo {
     top: 60px; }
   body #wrapper #top #main-menu {
@@ -123,6 +126,7 @@ body #top {
     color: #fff;
     font-size: 14px;
     text-transform: uppercase; } }
+
 @media (max-width: 375px) {
   body #wrapper #page-content-wrapper .planets #mercury {
     position: absolute;
@@ -171,6 +175,7 @@ body #top {
     max-width: 45px;
     left: 85%;
     top: 279px; } }
+
 @media (max-width: 325px) {
   body #wrapper #top #links {
     left: 13%; }
@@ -231,4 +236,3 @@ body #top {
       font-size: 13px;
       text-transform: uppercase; } }
 
-/*# sourceMappingURL=deni.css.map */
