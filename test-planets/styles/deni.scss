@@ -1,4 +1,4 @@
-﻿/*deni some fixes*/
+/*deni some fixes*/
 
 @font-face {
     font-family: 'AdobeDevanagari-Regular';
@@ -20,7 +20,23 @@ $menuTextColor: #1A171B;
 
 body {
     #wrapper {
+        .background {
+            margin-top: -65px;
 
+            .bg-mo {
+                display: none;
+            }
+
+            .bg-mo1 {
+                display: none;
+            }
+
+            img {
+                z-index: -1;
+                position: relative;
+                width: 100%;
+            }
+        }
 
         #sidebar-wrapper {
             background-position: center;
