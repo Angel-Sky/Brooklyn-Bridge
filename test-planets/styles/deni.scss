@@ -54,8 +54,16 @@ body {
                     border: none;
                     padding: 50px;
 
+                    .history-content {
+                        p {
+                            font-weight: bold;
+                            font-size: 17px;
+                        }
+                    }
+
                     .modal-header {
                         border: none;
+                        padding: 0;
 
                         .modal-title {
                             font-size: 30px;
@@ -162,8 +170,8 @@ body {
 
 @media (min-width: 576px) {
     .modal-dialog {
-        max-width: 936px;
-        margin: 180px auto;
+        max-width: 972px;
+        margin: 90px auto;
     }
 }
 
@@ -251,6 +259,10 @@ body {
                         }
                     }
                 }
+            }
+
+            .modal-content {
+                padding: 10px 0 0 20px;
             }
 
             .background {
