@@ -21,7 +21,6 @@ $menuTextColor: #1A171B;
 body {
     #wrapper {
         .background {
-            margin-top: -65px;
 
             .bg-mo {
                 display: none;
@@ -48,7 +47,7 @@ body {
 
         #links {
             .modal-dialog {
-                background-image: url('img/pergament.png');
+                background-image: url('../images/pergament.png');
 
                 .modal-content {
                     background-color: transparent;
@@ -126,6 +125,7 @@ body {
 }
 
 @media (max-width:768px) {
+
     body {
         #wrapper {
             #top {
@@ -144,6 +144,18 @@ body {
                     }
                 }
             }
+
+            .background {
+                margin-top: -106px;
+
+                .bg-mo1 {
+                    display: none !important;
+                }
+
+                .bg-mo {
+                    display: block !important;
+                }
+            }
         }
     }
 }
@@ -156,15 +168,7 @@ body {
 }
 
 @media (max-width:425px) {
-    .background {
-        .bg-mo1 {
-            display: none !important;
-        }
 
-        .bg-mo {
-            display: block !important;
-        }
-    }
 
     body {
         #wrapper {
@@ -180,7 +184,7 @@ body {
                 }
 
                 #links {
-                    left: 21%;
+                    left: 29%;
                     top: 23px;
 
                     ul {
@@ -248,6 +252,10 @@ body {
                     }
                 }
             }
+
+            .background {
+                margin-top: 0;
+            }
         }
     }
 }
@@ -307,7 +315,7 @@ body {
         #wrapper {
             #top {
                 #links {
-                    left: 13%;
+                    left: 25%;
                 }
             }
 
