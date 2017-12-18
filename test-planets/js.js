@@ -119,4 +119,25 @@ $(document).ready(function () {
             }
         });
     });
+    //deni history link
+    function renderHistory(histories) {
+
+        for (let key in histories) {
+            let history = histories[key];
+            let historyDiv = $('<div class="history-content">')
+                .append('<p>' + history+ '</p>');
+            $('#history .modal-body').append(historyDiv);
+        }
+        
+    }
+    function renderHistoryData(histories) {
+        renderHistory(histories);
+    }
+    function getAllHistory() {
+        let requestURL = 'https://brooklynbridge-c825a.firebaseio.com/SolarSystem/History.json';
+        $.get(requestURL)
+            .then(renderHistory)
+            .catch((err) => console.log(err));
+    }
+    getAllHistory()
 });
