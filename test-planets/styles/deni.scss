@@ -1,0 +1,358 @@
+﻿/*deni some fixes*/
+
+@font-face {
+    font-family: 'AdobeDevanagari-Regular';
+    src: url('../AdobeDevanagari-Regular.otf') format('opentype');
+}
+
+@mixin planetPosition($imgWidth, $left, $top) {
+    position: absolute;
+    max-width: $imgWidth;
+    left: $left;
+    top: $top;
+}
+
+$white: #fff;
+$black: #000;
+$beige: #c8b89a;
+$red: #ff0000;
+$menuTextColor: #1A171B;
+
+body {
+    #wrapper {
+
+
+        #sidebar-wrapper {
+            background-position: center;
+        }
+    }
+
+    #top {
+        background-position: center;
+
+        #links {
+            .modal-dialog {
+                background-image: url('img/pergament.png');
+
+                .modal-content {
+                    background-color: transparent;
+                    border: none;
+                    padding: 50px;
+
+                    .modal-header {
+                        border: none;
+
+                        .modal-title {
+                            font-size: 30px;
+                            padding: 5px;
+                        }
+
+                        .close {
+                            color: $red;
+                            font-size: 50px;
+                        }
+                    }
+
+                    .modal-footer {
+                        border: none;
+                    }
+                }
+            }
+        }
+
+        #page-content-wrapper {
+
+            .planets {
+                #mercury {
+                    img {
+                        margin-left: 11px
+                    }
+                }
+
+                .text {
+                    width: 108%;
+                    border-radius: 7px;
+                    padding-top: 3px;
+                    margin: 10px 0 0 0;
+                }
+            }
+        }
+    }
+}
+
+/*deni responsive*/
+@media (max-width:1024px) {
+    .background {
+        margin-top: 0px;
+
+        .bg {
+            display: none;
+        }
+
+        .bg-mo1 {
+            display: block !important;
+        }
+    }
+
+    body {
+        #wrapper {
+            #top {
+                #links {
+                    ul {
+                        li {
+                            margin-right: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    body {
+        #wrapper {
+            #top {
+                #logo {
+                    img {
+                        max-height: 100px;
+                    }
+                }
+
+                #links {
+                    ul {
+                        li {
+                            margin-right: 20px;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 936px;
+        margin: 180px auto;
+    }
+}
+
+@media (max-width:425px) {
+    .background {
+        .bg-mo1 {
+            display: none !important;
+        }
+
+        .bg-mo {
+            display: block !important;
+        }
+    }
+
+    body {
+        #wrapper {
+            #top {
+                #logo {
+                    top: 60px;
+                }
+
+                #main-menu {
+                    padding-left: 10px;
+                    padding-top: 13px;
+                    font-size: 15px;
+                }
+
+                #links {
+                    left: 21%;
+                    top: 23px;
+
+                    ul {
+                        li {
+                            font-size: 22px;
+                        }
+                    }
+
+                    #openModal {
+                        display: none !important;
+                        width: 100%;
+                        background: $black;
+                    }
+                }
+            }
+
+            #page-content-wrapper {
+                .planets {
+                    #mercury {
+                        @include planetPosition(75px, 58%, 268px );
+
+                        img {
+                            max-width: 30px;
+                        }
+                    }
+
+                    #venus {
+                        @include planetPosition(55px, 48%, 168px);
+                    }
+
+                    #earth {
+                        @include planetPosition(53px, 15%, 156px);
+                    }
+
+                    #mars {
+                        @include planetPosition(39px, 14%, 246px);
+                    }
+
+                    #jupiter {
+                        @include planetPosition(56px, 29%, 317px);
+                    }
+
+                    #saturn {
+                        @include planetPosition(60px, 48%, 350px);
+                    }
+
+                    #uranus {
+                        @include planetPosition(64px, 67%, 343px);
+                    }
+
+                    #neptune {
+                        @include planetPosition(73px, 74%, 189px);
+                    }
+
+                    #pluto {
+                        @include planetPosition(45px, 85%, 320px);
+                    }
+
+                    .text {
+                        p {
+                            color: $white;
+                            font-size: 14px;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:375px) {
+    body {
+        #wrapper {
+            #page-content-wrapper {
+                .planets {
+                    #mercury {
+                        @include planetPosition(75px, 58%, 238px );
+
+                        img {
+                            max-width: 30px;
+                        }
+                    }
+
+                    #venus {
+                        @include planetPosition(55px, 48%, 136px);
+                    }
+
+                    #earth {
+                        @include planetPosition(53px, 15%, 122px);
+                    }
+
+                    #mars {
+                        @include planetPosition(39px, 14%, 218px);
+                    }
+
+                    #jupiter {
+                        @include planetPosition(56px, 29%, 279px);
+                    }
+
+                    #saturn {
+                        @include planetPosition(60px, 48%, 324px);
+                    }
+
+                    #uranus {
+                        @include planetPosition(55px, 70%, 331px);
+                    }
+
+                    #neptune {
+                        @include planetPosition(73px, 74%, 162px);
+                    }
+
+                    #pluto {
+                        @include planetPosition(45px, 85%, 279px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:325px) {
+    body {
+        #wrapper {
+            #top {
+                #links {
+                    left: 13%;
+                }
+            }
+
+            #page-content-wrapper {
+                .planets {
+                    #mercury {
+                        @include planetPosition(63px, 54%, 217px );
+
+                        img {
+                            max-width: 24px;
+                        }
+                    }
+
+                    #venus {
+                        @include planetPosition(44px, 48%, 122px);
+                    }
+
+                    #earth {
+                        @include planetPosition(45px, 11%, 112px);
+                    }
+
+                    #mars {
+                        @include planetPosition(36px, 14%, 194px);
+                    }
+
+                    #jupiter {
+                        @include planetPosition(50px, 29%, 238px);
+                    }
+
+                    #saturn {
+                        @include planetPosition(56px, 48%, 277px);
+                    }
+
+                    #uranus {
+                        @include planetPosition(54px, 68%, 289px);
+
+                        img {
+                            max-width: 44px;
+                            margin-left: 11px;
+                        }
+                    }
+
+                    #neptune {
+                        @include planetPosition(60px, 75%, 156px);
+                    }
+
+                    #pluto {
+                        @include planetPosition(40px, 85%, 255px);
+                    }
+
+                    .text {
+                        width: 120%;
+
+                        p {
+                            color: $white;
+                            font-size: 13px;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
