@@ -25,8 +25,12 @@ body #top {
       background-color: transparent;
       border: none;
       padding: 50px; }
+      body #top #links .modal-dialog .modal-content .history-content p {
+        font-weight: bold;
+        font-size: 17px; }
       body #top #links .modal-dialog .modal-content .modal-header {
-        border: none; }
+        border: none;
+        padding: 0; }
         body #top #links .modal-dialog .modal-content .modal-header .modal-title {
           font-size: 30px;
           padding: 5px; }
@@ -69,8 +73,8 @@ body #top {
 
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 936px;
-    margin: 180px auto; } }
+    max-width: 972px;
+    margin: 90px auto; } }
 
 @media (max-width: 425px) {
   body #wrapper #top #logo {
@@ -139,6 +143,8 @@ body #top {
     color: #fff;
     font-size: 14px;
     text-transform: uppercase; }
+  body #wrapper .modal-content {
+    padding: 10px 0 0 20px; }
   body #wrapper .background {
     margin-top: 0; } }
 
