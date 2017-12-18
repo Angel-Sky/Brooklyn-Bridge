@@ -4,32 +4,16 @@ $(document).ready(function () {
     let windowWidth = $(window).width();
     let error = '';
     let wrapper = $('#wrapper');
-
     bigBox.width(Number(windowWidth - 400) + 'px');
+    
     //On resize to change the size of the Modal
     $(window).resize(function () {
         bigBox.width(Number($(window).width() - 300) + 'px');
     });
-
+    
    // Modal with info
     let wrapperBox = $('<div class="wrapperBox"></div>');
     bigBox.append(wrapperBox);
-
-    $('.planet').click(function () {
-        wrapperBox.empty();
-        wrapper.addClass('toggled');
-        let planetName = $(this).attr('data-planet');
-        $.ajax({
-            url: 'https://solar-system-3699c.firebaseio.com/.json',
-            success: function (data) {
-                ajaxSuccess(data, planetName);
-            },
-            error: function () {
-                wrapperBox.append('<div class="error">There was error we are sorry.</div>');
-            }
-        });
-    });
-
     function ajaxSuccess(json, planetName) {
         for (let i in json) {
             let solarSystem = json[i];
@@ -40,7 +24,6 @@ $(document).ready(function () {
             }
         }
     }
-
     function showClickedPlanetData(singlePlanet) {
         bigBox.css({display: 'block'});
         //append planet info
@@ -110,8 +93,30 @@ $(document).ready(function () {
         //close X
         $('body').on('click', '.close', function removeInfoBubble() {
             $('.planets-info-wrapper').remove();
-
-
         });
+
     }
+    $('.planet').click(function () {
+        wrapperBox.empty();
+        wrapper.addClass('toggled');
+        let planetName = $(this).attr('data-planet');
+
+        var xi = $(this).offset().left;//-404
+        console.log(xi);
+        var yi = $(this).offset().top;//-200
+        $(this).animate({
+            left: xi - xi + 100,
+            top: yi - yi + 138,
+        },3000);
+
+        $.ajax({
+            url: 'https://solar-system-3699c.firebaseio.com/.json',
+            success: function (data) {
+                ajaxSuccess(data, planetName);
+            },
+            error: function () {
+                wrapperBox.append('<div class="error">There was error we are sorry.</div>');
+            }
+        });
+    });
 });
