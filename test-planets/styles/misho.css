@@ -1,12 +1,8 @@
 .big-box {
-  background: #fff;
   position: absolute;
   top: 135px;
-  height: 450px;
-  background: rgba(0,0,0, 0.8);
   left: 150px;
-  min-width: 400px;
-  margin-left: 100px;
+
 }
 
 .error {
@@ -34,12 +30,3 @@
   color: rgb(200, 183, 153);
 }
 
-.closeX {
-  color: red;
-  font-size: 50px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  line-height: 10px;
-  cursor: pointer;
-}
