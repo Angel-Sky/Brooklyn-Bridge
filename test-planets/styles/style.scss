@@ -24,15 +24,12 @@ body {
     height: 50px;
   }
 
-  div.planets {
-    display: inline-block;
-    height: 50px;
-  }
+ 
   .planets-info-wrapper {
     position: absolute;
-    left: 22.1%;
+    left: 25%;
     width: 960px;
-    height: 600px;
+    height: 500px;
     background-image: url("../images/bubble-background.png");
     background-repeat: no-repeat;
     //opacity: 0.6;
