@@ -93,21 +93,32 @@ $(document).ready(function () {
         //close X
         $('body').on('click', '.close', function removeInfoBubble() {
             $('.planets-info-wrapper').remove();
+
+            otherPlahets = $('.planets').find('.planet');
+            otherPlahets.fadeIn(1000);
+            $('.active').animate({
+                left: xi,
+                top: yi
+            })
+
         });
 
     }
     $('.planet').click(function () {
+        let otherPlahets = $('.planets').find('.planet').not(this);
+        otherPlahets.fadeOut(1000);
         wrapperBox.empty();
         wrapper.addClass('toggled');
         let planetName = $(this).attr('data-planet');
-
-        var xi = $(this).offset().left;//-404
+        let xi = $(this).offset().left;
         console.log(xi);
-        var yi = $(this).offset().top;//-200
+        let yi = $(this).offset().top;
+        console.log(yi);
+
         $(this).animate({
             left: xi - xi + 100,
             top: yi - yi + 138,
-        },3000);
+        },400);
 
         $.ajax({
             url: 'https://solar-system-3699c.firebaseio.com/.json',
@@ -128,7 +139,7 @@ $(document).ready(function () {
                 .append('<p>' + history+ '</p>');
             $('#history .modal-body').append(historyDiv);
         }
-        
+
     }
     function renderHistoryData(histories) {
         renderHistory(histories);
@@ -140,4 +151,5 @@ $(document).ready(function () {
             .catch((err) => console.log(err));
     }
     getAllHistory()
+
 });
