@@ -2,45 +2,106 @@
 @font-face {
   font-family: 'AdobeDevanagari-Regular';
   src: url("../fonts/AdobeDevanagari-Regular.woff") format("opentype"); }
-body #wrapper .background .bg-mo {
-  display: none; }
-body #wrapper .background .bg-mo1 {
-  display: none; }
-body #wrapper .background img {
-  z-index: -1;
-  position: relative;
-  width: 100%; }
-body #wrapper #sidebar-wrapper {
-  background-position: center; }
-body #top {
-  background-position: center; }
-  body #top #links .modal-dialog {
-    background-image: url("../images/pergament.png"); }
-    body #top #links .modal-dialog .modal-content {
-      background-color: transparent;
-      border: none;
-      padding: 50px; }
-      body #top #links .modal-dialog .modal-content .history-content p {
-        font-weight: bold;
-        font-size: 17px; }
-      body #top #links .modal-dialog .modal-content .modal-header {
-        border: none;
-        padding: 0; }
-        body #top #links .modal-dialog .modal-content .modal-header .modal-title {
-          font-size: 30px;
-          padding: 5px; }
-        body #top #links .modal-dialog .modal-content .modal-header .close {
-          color: #ff0000;
-          font-size: 50px; }
-      body #top #links .modal-dialog .modal-content .modal-footer {
-        border: none; }
-  body #top #page-content-wrapper .planets #mercury img {
-    margin-left: 11px; }
-  body #top #page-content-wrapper .planets .text {
+
+body {
+  transition: 0.3s;
+  background-image: url("../images/background.jpg"); }
+  body #wrapper #sidebar-wrapper {
+    background-position: center; }
+    body #wrapper #sidebar-wrapper .sidebar-nav li {
+      padding-top: 5px; }
+  body #wrapper #page-content-wrapper .planets #mercury {
+    position: absolute;
+    max-width: 100px;
+    left: 60%;
+    top: 393px;
+    text-align: center; }
+    body #wrapper #page-content-wrapper .planets #mercury img {
+      max-width: 40px;
+      margin-left: 5px; }
+  body #wrapper #page-content-wrapper .planets #venus {
+    position: absolute;
+    max-width: 100px;
+    left: 55%;
+    top: 160px; }
+  body #wrapper #page-content-wrapper .planets #earth {
+    position: absolute;
+    max-width: 100px;
+    left: 30%;
+    top: 70px; }
+  body #wrapper #page-content-wrapper .planets #mars {
+    position: absolute;
+    max-width: 100px;
+    left: 20%;
+    top: 240px; }
+  body #wrapper #page-content-wrapper .planets #jupiter {
+    position: absolute;
+    max-width: 100px;
+    left: 28%;
+    top: 427px; }
+  body #wrapper #page-content-wrapper .planets #saturn {
+    position: absolute;
+    max-width: 100px;
+    left: 36%;
+    top: 584px; }
+  body #wrapper #page-content-wrapper .planets #uranus {
+    position: absolute;
+    max-width: 100px;
+    left: 80%;
+    top: 530px; }
+  body #wrapper #page-content-wrapper .planets #neptune {
+    position: absolute;
+    max-width: 100px;
+    left: 74%;
+    top: 340px; }
+  body #wrapper #page-content-wrapper .planets #pluto {
+    position: absolute;
+    max-width: 100px;
+    left: 90%;
+    top: 460px; }
+  body #wrapper #page-content-wrapper .planets .text {
+    background: #000;
+    text-align: center;
     width: 108%;
     border-radius: 7px;
     padding-top: 3px;
     margin: 10px 0 0 0; }
+    body #wrapper #page-content-wrapper .planets .text p {
+      color: #fff;
+      font-size: 16px;
+      text-transform: uppercase; }
+  body #wrapper .background .bg-mo {
+    display: none; }
+  body #wrapper .background .bg-mo1 {
+    display: none; }
+  body #wrapper .background img {
+    z-index: -1;
+    position: relative;
+    width: 100%; }
+
+#top {
+  background-position: center; }
+  #top #links .modal-dialog {
+    background-image: url("../images/pergament.png"); }
+    #top #links .modal-dialog .modal-content {
+      background-color: transparent;
+      border: none;
+      padding: 50px; }
+      #top #links .modal-dialog .modal-content .history-content p {
+        font-weight: bold;
+        font-size: 21px;
+        color: #c8b89a; }
+      #top #links .modal-dialog .modal-content .modal-header {
+        border: none;
+        padding: 0; }
+        #top #links .modal-dialog .modal-content .modal-header .modal-title {
+          font-size: 30px;
+          padding: 5px; }
+        #top #links .modal-dialog .modal-content .modal-header .close {
+          color: #ff0000;
+          font-size: 50px; }
+      #top #links .modal-dialog .modal-content .modal-footer {
+        border: none; }
 
 /*deni responsive*/
 @media (max-width: 1024px) {
@@ -50,9 +111,9 @@ body #top {
       display: none; }
     .background .bg-mo1 {
       display: block !important; }
-
   body #wrapper #top #links ul li {
     margin-right: 40px; } }
+
 @media (max-width: 768px) {
   body #wrapper #top #logo img {
     max-height: 100px; }
@@ -65,10 +126,12 @@ body #top {
       display: none !important; }
     body #wrapper .background .bg-mo {
       display: block !important; } }
+
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 972px;
     margin: 90px auto; } }
+
 @media (max-width: 425px) {
   body #wrapper #top #logo {
     top: 60px; }
@@ -140,6 +203,7 @@ body #top {
     padding: 10px 0 0 20px; }
   body #wrapper .background {
     margin-top: 0; } }
+
 @media (max-width: 375px) {
   body #wrapper #page-content-wrapper .planets #mercury {
     position: absolute;
@@ -188,6 +252,7 @@ body #top {
     max-width: 45px;
     left: 85%;
     top: 279px; } }
+
 @media (max-width: 325px) {
   body #wrapper #top #links {
     left: 25%; }
@@ -248,4 +313,3 @@ body #top {
       font-size: 13px;
       text-transform: uppercase; } }
 
-/*# sourceMappingURL=deni.css.map */
