@@ -157,7 +157,7 @@ body {
           color: #fff;
           font-size: 16px;
           text-transform: uppercase; }
-modal-content{ color: white;}
+.modal-content{ color: #fff;}
 @media (min-width: 488px) {
   #wrapper {
     padding-left: 0; }
