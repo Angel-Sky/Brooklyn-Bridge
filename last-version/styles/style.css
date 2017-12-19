@@ -40,12 +40,11 @@ body .planets-info-wrapper {
       body .planets-info-wrapper .planets-info .close:hover {
         cursor: pointer; }
     body .planets-info-wrapper .planets-info ul {
-      margin-bottom: 20%; }
+      margin-bottom: 10%; }
       body .planets-info-wrapper .planets-info ul li {
         list-style-type: none;
         color: white;
         vertical-align: top;
-        margin-bottom: 2%;
         font-family: "AdobeDevanagari-Regular",sans-serif;
         font-size: 22px; }
         body .planets-info-wrapper .planets-info ul li span {
