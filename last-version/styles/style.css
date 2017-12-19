@@ -25,9 +25,10 @@ body .planets-info-wrapper {
     body .planets-info-wrapper .planets-info .overwiev {
       padding-top: 5%;
       color: white;
-      font-family: "AdobeDevanagari-Regular",sans-serif; }
+      font-family: "AdobeDevanagari-Regular",sans-serif;
+      font-size: 22px; }
       body .planets-info-wrapper .planets-info .overwiev span {
-        color: hotpink;
+        color: #c8b89a;
         font-family: "AdobeDevanagari-Regular",sans-serif; }
     body .planets-info-wrapper .planets-info .close {
       font-family: "RetroComputer",sans-serif;
@@ -43,12 +44,14 @@ body .planets-info-wrapper {
       body .planets-info-wrapper .planets-info ul li {
         list-style-type: none;
         color: white;
-        font-size: 20px;
         vertical-align: top;
         margin-bottom: 2%;
-        font-family: "AdobeDevanagari-Regular",sans-serif; }
+        font-family: "AdobeDevanagari-Regular",sans-serif;
+        font-size: 22px; }
         body .planets-info-wrapper .planets-info ul li span {
-          color: hotpink; }
+          color: #c8b89a;
+          font-family: "AdobeDevanagari-Regular",sans-serif;
+          font-size: 25px; }
     body .planets-info-wrapper .planets-info .slider {
       width: 95%; }
       body .planets-info-wrapper .planets-info .slider .slick-prev:before,
@@ -60,4 +63,4 @@ body .planets-info-wrapper {
         width: 90%;
         height: 90%; }
 
-/*# sourceMappingURL=style-ivan.css.map */
+/*# sourceMappingURL=style.css.map */
