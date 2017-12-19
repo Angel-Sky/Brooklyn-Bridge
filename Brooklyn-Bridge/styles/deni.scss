@@ -19,9 +19,83 @@ $red: #ff0000;
 $menuTextColor: #1A171B;
 
 body {
-    #wrapper {
-        .background {
+    transition: 0.3s;
+    background-image: url('../images/background.jpg');
 
+    #wrapper {
+        #sidebar-wrapper {
+            background-position: center;
+
+            .sidebar-nav {
+                li {
+                    padding-top: 5px;
+                }
+            }
+        }
+
+        #page-content-wrapper {
+
+            .planets {
+                #mercury {
+                    @include planetPosition(100px, 60%, 393px);
+                    text-align: center;
+
+                    img {
+                        max-width: 40px;
+                        margin-left: 5px
+                    }
+                }
+
+                #venus {
+                    @include planetPosition(100px, 55%, 160px);
+                }
+
+                #earth {
+                    @include planetPosition(100px, 30%, 70px);
+                }
+
+                #mars {
+                    @include planetPosition(100px, 20%, 240px);
+                }
+
+                #jupiter {
+                    @include planetPosition(100px, 28%, 427px);
+                }
+
+                #saturn {
+                    @include planetPosition(100px, 36%, 584px);
+                }
+
+                #uranus {
+                    @include planetPosition(100px, 80%, 530px);
+                }
+
+                #neptune {
+                    @include planetPosition(100px, 74%, 340px);
+                }
+
+                #pluto {
+                    @include planetPosition(100px, 90%, 460px);
+                }
+
+                .text {
+                    background: $black;
+                    text-align: center;
+                    width: 108%;
+                    border-radius: 7px;
+                    padding-top: 3px;
+                    margin: 10px 0 0 0;
+
+                    p {
+                        color: $white;
+                        font-size: 16px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+
+        .background {
             .bg-mo {
                 display: none;
             }
@@ -36,72 +110,53 @@ body {
                 width: 100%;
             }
         }
-
-        #sidebar-wrapper {
-            background-position: center;
-        }
     }
+}
 
-    #top {
-        background-position: center;
+#top {
+    background-position: center;
 
-        #links {
-            .modal-dialog {
-                background-image: url('../images/pergament.png');
+    #links {
+        .modal-dialog {
+            background-image: url('../images/pergament.png');
 
-                .modal-content {
-                    background-color: transparent;
+            .modal-content {
+                background-color: transparent;
+                border: none;
+                padding: 50px;
+
+                .history-content {
+                    p {
+                        font-weight: bold;
+                        font-size: 21px;
+                        color: $beige;
+                    }
+                }
+
+                .modal-header {
                     border: none;
-                    padding: 50px;
+                    padding: 0;
 
-                    .history-content {
-                        p {
-                            font-weight: bold;
-                            font-size: 17px;
-                        }
+                    .modal-title {
+                        font-size: 30px;
+                        padding: 5px;
                     }
 
-                    .modal-header {
-                        border: none;
-                        padding: 0;
-
-                        .modal-title {
-                            font-size: 30px;
-                            padding: 5px;
-                        }
-
-                        .close {
-                            color: $red;
-                            font-size: 50px;
-                        }
-                    }
-
-                    .modal-footer {
-                        border: none;
-                    }
-                }
-            }
-        }
-
-        #page-content-wrapper {
-
-            .planets {
-                #mercury {
-                    img {
-                        margin-left: 11px
+                    .close {
+                        color: $red;
+                        font-size: 50px;
                     }
                 }
 
-                .text {
-                    width: 108%;
-                    border-radius: 7px;
-                    padding-top: 3px;
-                    margin: 10px 0 0 0;
+                .modal-footer {
+                    border: none;
                 }
             }
         }
     }
 }
+
+
 
 /*deni responsive*/
 @media (max-width:1024px) {
