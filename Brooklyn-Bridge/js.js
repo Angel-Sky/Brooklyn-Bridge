@@ -129,16 +129,138 @@ $(document).ready(function () {
             }
         });
     });
-    //deni history link
-    function renderHistory(histories) {
 
-        for (let key in histories) {
-            let history = histories[key];
-            let historyDiv = $('<div class="history-content">')
-                .append('<p>' + history+ '</p>');
-            $('#history .modal-body').append(historyDiv);
+    //---Iva Save Planet---
+    function clearData(){
+        $('.modal-header').empty();
+        $('.modal-body').empty();
+        $('.modal-footer').empty();
+    }
+
+    function renderSavePlanet(SolarSystem){
+        $('#links').on('click', '.save-planet', function (e) {
+            e.preventDefault();
+            clearData();
+            let modalHead =  $('.modal-header');
+            let modalBody =  $('.modal-body');
+
+            $('<h1>').addClass('modal-title').text('Which planet do you want to save?')
+                .appendTo(modalHead);
+
+            $(`<button type="button" class="close" data-dismiss="modal">&times;</button>`)
+                .appendTo(modalHead)
+                .css('cursor', 'pointer');
+
+            $('<h4>')
+                .text('UASA want to send some bombs and explode 1 planet. Now you can choose which planet to save from destroinment.')
+                .appendTo(modalBody);
+
+            let form = $('<form>');
+            form
+                .attr('id', 'savePlanet')
+                .appendTo(modalBody);
+
+            renderInputsAndChangeResult(SolarSystem);
+        });
+    }
+
+    function renderInputsAndChangeResult(SolarSystem) {
+        for (let value in SolarSystem){
+            let planets = SolarSystem[value];
+
+            if (value !== 'History') {
+                for (let planetName in planets){
+                    let progressBarWidth = 30;
+                    let parseProgressBarWidth = parseInt(progressBarWidth);
+
+                    let votInputDiv = $('<div>').addClass('voteInput').attr('id', planetName +'2')
+                        .append($('<input type="radio" id="'+ planetName
+                            +'" name="savePlannet" value="'+ planetName
+                            + '"><label for="'+ planetName +'">'+ planetName +'</label>'));
+
+                    $('#savePlanet')
+                        .append(votInputDiv);
+
+                    renderProgressBar(parseProgressBarWidth, votInputDiv);
+                    btnOnClick(planetName, parseProgressBarWidth, votInputDiv);
+                }
+            }
         }
+        $('<button id="btnSave" class="btn btn-primary">Save Planet</button>')
+            .appendTo($('#savePlanet'));
+    }
 
+    function renderProgressBar(parseProgressBarWidth, votInputDiv) {
+        $('<div class="progress">\n' +
+            '<div class="progress-bar progress-bar-striped bg-info" aria-valuenow="'+
+            parseProgressBarWidth +'%" aria-valuemin="0" aria-valuemax="100" role="progressbar" style="width: '+
+            parseProgressBarWidth +'%" >'+ parseProgressBarWidth +'% Saved</div>' + '</div>')
+            .appendTo(votInputDiv);
+    }
+
+
+    function changeProgressBar(parseProgressBarWidth, votInputDiv) {
+        let parseProgressBarWidth2 = parseProgressBarWidth+10;
+        let parseProgressBarWidth3 = parseInt(parseProgressBarWidth2);
+
+        $('<div class="progress">\n' +
+            '<div class="progress-bar progress-bar-striped bg-info" aria-valuenow="'+
+            parseProgressBarWidth3 +'%" aria-valuemin="0" aria-valuemax="100" role="progressbar" style="width: '+
+            parseProgressBarWidth3 +'%" >'+ parseProgressBarWidth3 +'% Saved</div>' + '</div>')
+            .appendTo(votInputDiv);
+    }
+
+    function btnOnClick(planetName, parseProgressBarWidth, votInputDiv) {
+        $('#savePlanet').on('click', '#btnSave', function (e) {
+            e.preventDefault();
+            let checkedPlanet = $('input[name=savePlannet]:checked').val();
+
+            if(checkedPlanet===planetName){
+                let progress = $('#'+checkedPlanet+'2').find($('.progress'));
+                progress.empty().hide();
+                changeProgressBar(parseProgressBarWidth, votInputDiv);
+
+                $('#btnSave').attr("disabled", true);
+                $('<p>')
+                    .addClass("alert alert-info").text("You successfully voted for "+ checkedPlanet + "! Thank you!")
+                    .appendTo($('.modal-footer'));
+            }
+        });
+    }
+
+
+    function loadFromDatabase(){
+        $.ajax({
+            url: 'https://solarsystem-f7dec.firebaseio.com/SolarSystem.json',
+            success: renderSavePlanet,
+            error: function (e) {
+                console.log('Something went wrong (database error)');
+            }
+        })
+    }
+
+
+    loadFromDatabase();
+    //---Iva Save Planet END---
+
+    //deni history link
+
+    function renderHistory(histories) {
+        $('#links').on('click', '.history', function (e) {
+            e.preventDefault();
+            clearData();
+            $(`<button type="button" class="close" data-dismiss="modal">&times;</button>`)
+                .appendTo($('.modal-header'))
+                .css('cursor', 'pointer');
+
+            for (let key in histories) {
+                let history = histories[key];
+                let historyDiv = $('<div class="history-content">')
+                    .append('<p>' + history+ '</p>');
+                $('#history .modal-body').append(historyDiv);
+            }
+
+        });
     }
     function renderHistoryData(histories) {
         renderHistory(histories);
