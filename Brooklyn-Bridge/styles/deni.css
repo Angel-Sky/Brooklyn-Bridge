@@ -13,7 +13,7 @@ body {
     body #wrapper #sidebar-wrapper .sidebar-nav li {
       padding-top: 5px; }
   body #wrapper #page-content-wrapper .planets {
-    height: 650px;
+    height: 76vh;
     width: 100%; }
     body #wrapper #page-content-wrapper .planets #mercury {
       position: absolute;
@@ -33,7 +33,7 @@ body {
       position: absolute;
       max-width: 100px;
       left: 30%;
-      top: 11%; }
+      top: 14%; }
     body #wrapper #page-content-wrapper .planets #mars {
       position: absolute;
       max-width: 100px;
