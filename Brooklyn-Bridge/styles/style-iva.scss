@@ -3,28 +3,13 @@
   src: url('../fonts/AdobeDevanagari-Regular.woff') format('opentype');
 }
 
-@mixin planetPosition($imgWidth, $left, $top){
-  position: absolute;
-  max-width: $imgWidth;
-  left: $left;
-  top: $top;
-}
-
 $white:#fff;
 $black:#000;
 $beige: #c8b89a;
 $menuTextColor: #1A171B;
 
 body {
-  //overflow-y: hidden;
   font-family: 'AdobeDevanagari-Regular', sans-serif;
-  .background {
-    img {
-      z-index: -1;
-      position: relative;
-      width: 100%;
-    }
-  }
 
   #wrapper {
     padding-left: 0;
@@ -130,6 +115,35 @@ body {
             }
           }
         }
+        .modal-dialog {
+          color: $beige;
+          .modal-content {
+            .modal-header {
+              padding: 5px 10px;
+            }
+            .modal-body {
+              form {
+                font-size: 18pt;
+                label {
+                  margin: 2px 7px;
+                }
+                #btnSave {
+                  margin-top: 35px;
+                  font-size: 20pt;
+                }
+              }
+              .progress{
+                height: 1.5rem;
+                .progress-bar{
+                  font-size: 12pt;
+                }
+              }
+            }
+            .modal-footer {
+              font-size: 18pt;
+            }
+          }
+        }
       }
 
         #logo {
@@ -145,60 +159,12 @@ body {
 
     }
 
-
     #page-content-wrapper {
       width: 100%;
       position: absolute;
       padding: 15px;
-
-        .planets {
-          #mercury {
-            @include planetPosition(100px, 60%, 393px);
-            text-align: center;
-            img {
-              max-width: 40px;
-            }
-          }
-          #venus {
-            @include planetPosition(80px, 55%, 233px);
-          }
-          #earth {
-            @include planetPosition(80px, 30%, 155px);
-          }
-          #mars {
-            @include planetPosition(65px, 20%, 280px);
-          }
-          #jupiter {
-            @include planetPosition(125px, 23%, 454px);
-          }
-          #saturn {
-            @include planetPosition(160px, 45%, 638px);
-          }
-          #uranus {
-            @include planetPosition(106px, 74%, 611px);
-          }
-          #neptune {
-            @include planetPosition(106px, 74%, 340px);
-          }
-          #pluto {
-            @include planetPosition(70px, 90%, 529px);
-          }
-          .text {
-            background: $black;
-            text-align: center;
-            padding: 0 3px;
-            margin: 10%;
-            width: 100%;
-            p {
-              color: $white;
-              font-size: 16px;
-              text-transform: uppercase;
-            }
-          }
-        }
     }
   }
-
 }
 
 @media(min-width:488px) {

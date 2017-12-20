@@ -3,10 +3,6 @@
   src: url("../fonts/AdobeDevanagari-Regular.woff") format("opentype"); }
 body {
   font-family: 'AdobeDevanagari-Regular', sans-serif; }
-  body .background img {
-    z-index: -1;
-    position: relative;
-    width: 100%; }
   body #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -87,6 +83,23 @@ body {
           font-size: 25px; }
           body #wrapper #top #links ul li a {
             color: #c8b89a; }
+        body #wrapper #top #links .modal-dialog {
+          color: #c8b89a; }
+          body #wrapper #top #links .modal-dialog .modal-content .modal-header {
+            padding: 5px 10px; }
+          body #wrapper #top #links .modal-dialog .modal-content .modal-body form {
+            font-size: 18pt; }
+            body #wrapper #top #links .modal-dialog .modal-content .modal-body form label {
+              margin: 2px 7px; }
+            body #wrapper #top #links .modal-dialog .modal-content .modal-body form #btnSave {
+              margin-top: 35px;
+              font-size: 20pt; }
+          body #wrapper #top #links .modal-dialog .modal-content .modal-body .progress {
+            height: 1.5rem; }
+            body #wrapper #top #links .modal-dialog .modal-content .modal-body .progress .progress-bar {
+              font-size: 12pt; }
+          body #wrapper #top #links .modal-dialog .modal-content .modal-footer {
+            font-size: 18pt; }
       body #wrapper #top #logo {
         top: 3px;
         -webkit-transform: translateX(-50%);
@@ -99,65 +112,7 @@ body {
       width: 100%;
       position: absolute;
       padding: 15px; }
-      body #wrapper #page-content-wrapper .planets #mercury {
-        position: absolute;
-        max-width: 100px;
-        left: 60%;
-        top: 393px;
-        text-align: center; }
-        body #wrapper #page-content-wrapper .planets #mercury img {
-          max-width: 40px; }
-      body #wrapper #page-content-wrapper .planets #venus {
-        position: absolute;
-        max-width: 80px;
-        left: 55%;
-        top: 233px; }
-      body #wrapper #page-content-wrapper .planets #earth {
-        position: absolute;
-        max-width: 80px;
-        left: 30%;
-        top: 155px; }
-      body #wrapper #page-content-wrapper .planets #mars {
-        position: absolute;
-        max-width: 65px;
-        left: 20%;
-        top: 280px; }
-      body #wrapper #page-content-wrapper .planets #jupiter {
-        position: absolute;
-        max-width: 125px;
-        left: 23%;
-        top: 454px; }
-      body #wrapper #page-content-wrapper .planets #saturn {
-        position: absolute;
-        max-width: 160px;
-        left: 45%;
-        top: 638px; }
-      body #wrapper #page-content-wrapper .planets #uranus {
-        position: absolute;
-        max-width: 106px;
-        left: 74%;
-        top: 611px; }
-      body #wrapper #page-content-wrapper .planets #neptune {
-        position: absolute;
-        max-width: 106px;
-        left: 74%;
-        top: 340px; }
-      body #wrapper #page-content-wrapper .planets #pluto {
-        position: absolute;
-        max-width: 70px;
-        left: 90%;
-        top: 529px; }
-      body #wrapper #page-content-wrapper .planets .text {
-        background: #000;
-        text-align: center;
-        padding: 0 3px;
-        margin: 10%;
-        width: 100%; }
-        body #wrapper #page-content-wrapper .planets .text p {
-          color: #fff;
-          font-size: 16px;
-          text-transform: uppercase; }
-.modal-content{ color: #fff;}
+
 @media (min-width: 488px) {
   #wrapper {
     padding-left: 0; }
