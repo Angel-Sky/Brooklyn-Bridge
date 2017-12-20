@@ -32,7 +32,7 @@ $(document).ready(function () {
             '<div class="container-fluid">' +
             '<div class="row">' +
             '<div class="col-xs-11 col-sm-11 col-md-11">' +
-            '<p class="overwiev"><span>Overview:</span>' + singlePlanet['overview'] + '</p>' +
+            '<p class="overwiev"><span>Overview: </span>' + singlePlanet['overview'] + '</p>' +
             '</div>' +
             '<div class="col-xs-1 col-sm-1 col-md-1">' +
             '<p class="close">x' +
@@ -43,19 +43,18 @@ $(document).ready(function () {
             ' <div class="col-xs-6 col-sm-6 col-md-6">' +
 
             ' <ul>' +
-            '<li><span>Spieces:</span>' + singlePlanet['spieces'] + '</li>' +
-            '<li><span>Population:</span>' + singlePlanet['population'] + '</li>' +
-            '<li><span>Water:</span>' + singlePlanet['water'] + '</li>' +
+            '<li><span>Spieces: </span>' + singlePlanet['kinds'] + '</li>' +
+            '<li><span>Population: </span>' + singlePlanet['population'] + '</li>' +
+            '<li><span>Water: </span>' + singlePlanet['water'] + '</li>' +
             '</ul>' +
 
             '</div>' +
             '<div class="col-xs-6 col-sm-6 col-md-6">' +
 
             '<ul>' +
-            '<li><span>Land:</span>' + singlePlanet['land'] + '</li>' +
+            '<li><span>Land: </span>' + singlePlanet['land'] + '</li>' +
             '<li><span>Seasons: </span>' + singlePlanet['seasons'] + '</li>' +
-            '<li><span>Continents:</span>' + singlePlanet['continents'] + '</li>' +
-            '<li><span>Countries:</span>' + singlePlanet['countries'] + '</li>' +
+            '<li><span>Countries: </span>' + singlePlanet['countries'] + '</li>' +
             '</ul>' +
 
             '</div>' +
