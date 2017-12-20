@@ -90,7 +90,7 @@ $(document).ready(function () {
             arrows: false,
         });
         //close X
-        $('body').on('click', '.close', function removeInfoBubble() {
+        $('body').on('click', '.close-red', function removeInfoBubble() {
             $('.planets-info-wrapper').remove();
 
             otherPlahets = $('.planets').find('.planet');
