@@ -110,10 +110,8 @@ $(document).ready(function () {
         wrapper.addClass('toggled');
         let planetName = $(this).attr('data-planet');
         let xi = $(this).offset().left;
-        console.log(xi);
         let yi = $(this).offset().top;
-        console.log(yi);
-
+        $(this).addClass('active')
         $(this).animate({
             left: xi - xi + 100,
             top: yi - yi + 138,
