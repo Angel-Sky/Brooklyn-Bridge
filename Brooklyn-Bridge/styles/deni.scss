@@ -40,7 +40,7 @@ body {
         #page-content-wrapper {
 
             .planets {
-                height: 650px;
+                height: 76vh;
                 width: 100%;
 
                 #mercury {
@@ -58,7 +58,7 @@ body {
                 }
 
                 #earth {
-                    @include planetPosition(100px, 30%, 11%);
+                    @include planetPosition(100px, 30%, 14%);
                 }
 
                 #mars {
