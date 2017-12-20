@@ -164,14 +164,20 @@ $(document).ready(function () {
         });
     }
 
+    function getRandomInt(min, max) {
+        return Math.floor((Math.random() * max) + min);
+    }
+
     function renderInputsAndChangeResult(SolarSystem) {
         for (let value in SolarSystem){
             let planets = SolarSystem[value];
+            for (let planetName in planets){
+                if (planetName !== 'History') {
+                    let min = 1;
+                    let parseMin = parseInt(min);
 
-            if (value !== 'History') {
-                for (let planetName in planets){
-                    let progressBarWidth = 30;
-                    let parseProgressBarWidth = parseInt(progressBarWidth);
+                    let max = 100;
+                    let parseMax = parseInt(max);
 
                     let votInputDiv = $('<div>').addClass('voteInput').attr('id', planetName +'2')
                         .append($('<input type="radio" id="'+ planetName
@@ -181,8 +187,8 @@ $(document).ready(function () {
                     $('#savePlanet')
                         .append(votInputDiv);
 
-                    renderProgressBar(parseProgressBarWidth, votInputDiv);
-                    btnOnClick(planetName, parseProgressBarWidth, votInputDiv);
+                    renderProgressBar(getRandomInt(parseMin, parseMax), votInputDiv);
+                    btnOnClick(planetName, votInputDiv);
                 }
             }
         }
@@ -194,40 +200,30 @@ $(document).ready(function () {
         $('<div class="progress">\n' +
             '<div class="progress-bar progress-bar-striped bg-info" aria-valuenow="'+
             parseProgressBarWidth +'%" aria-valuemin="0" aria-valuemax="100" role="progressbar" style="width: '+
-            parseProgressBarWidth +'%" >'+ parseProgressBarWidth +'% Saved</div>' + '</div>')
+            parseProgressBarWidth +'%" >'+ parseProgressBarWidth +'%</div>' + '</div>')
             .appendTo(votInputDiv);
     }
 
-
-    function changeProgressBar(parseProgressBarWidth, votInputDiv) {
-        let parseProgressBarWidth2 = parseProgressBarWidth+10;
-        let parseProgressBarWidth3 = parseInt(parseProgressBarWidth2);
-
-        $('<div class="progress">\n' +
-            '<div class="progress-bar progress-bar-striped bg-info" aria-valuenow="'+
-            parseProgressBarWidth3 +'%" aria-valuemin="0" aria-valuemax="100" role="progressbar" style="width: '+
-            parseProgressBarWidth3 +'%" >'+ parseProgressBarWidth3 +'% Saved</div>' + '</div>')
-            .appendTo(votInputDiv);
-    }
-
-    function btnOnClick(planetName, parseProgressBarWidth, votInputDiv) {
+    function btnOnClick(planetName, votInputDiv) {
         $('#savePlanet').on('click', '#btnSave', function (e) {
             e.preventDefault();
             let checkedPlanet = $('input[name=savePlannet]:checked').val();
 
             if(checkedPlanet===planetName){
-                let progress = $('#'+checkedPlanet+'2').find($('.progress'));
-                progress.empty().hide();
-                changeProgressBar(parseProgressBarWidth, votInputDiv);
+                let progressDiv = $('#'+checkedPlanet+'2').find($('.progress'));
+                let alreadyRandomVal = $('#'+checkedPlanet+'2').find($('.progress')).children().text();
+                let parseRandomVal = parseInt(alreadyRandomVal);
+                progressDiv.empty().hide();
+
+                renderProgressBar(parseRandomVal+1, votInputDiv);
 
                 $('#btnSave').attr("disabled", true);
                 $('<p>')
-                    .addClass("alert alert-info").text("You successfully voted for "+ checkedPlanet + "! Thank you!")
+                    .addClass('alert alert-info').text("You successfully voted for "+ checkedPlanet + "! Thank you!")
                     .appendTo($('.modal-footer'));
             }
         });
     }
-
 
     function loadFromDatabase(){
         $.ajax({
@@ -238,7 +234,6 @@ $(document).ready(function () {
             }
         })
     }
-
 
     loadFromDatabase();
     //---Iva Save Planet END---
