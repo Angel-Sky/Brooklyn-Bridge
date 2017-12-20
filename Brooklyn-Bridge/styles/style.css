@@ -30,14 +30,14 @@ body .planets-info-wrapper {
       body .planets-info-wrapper .planets-info .overwiev span {
         color: #c8b89a;
         font-family: "AdobeDevanagari-Regular",sans-serif; }
-    body .planets-info-wrapper .planets-info .close {
+    body .planets-info-wrapper .planets-info .close-red {
       font-family: "RetroComputer",sans-serif;
       color: red;
       font-size: 120%;
       text-align: right;
       padding-right: 11%;
       opacity: 1; }
-      body .planets-info-wrapper .planets-info .close:hover {
+      body .planets-info-wrapper .planets-info .close-red:hover {
         cursor: pointer; }
     body .planets-info-wrapper .planets-info ul {
       margin-bottom: 10%; }
