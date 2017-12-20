@@ -52,7 +52,8 @@ body .planets-info-wrapper {
           font-family: "AdobeDevanagari-Regular",sans-serif;
           font-size: 25px; }
     body .planets-info-wrapper .planets-info .slider {
-      width: 95%; }
+      width: 95%;
+      padding-left: 7%;}
       body .planets-info-wrapper .planets-info .slider .slick-prev:before,
       body .planets-info-wrapper .planets-info .slider .slick-next:before {
         display: none; }
