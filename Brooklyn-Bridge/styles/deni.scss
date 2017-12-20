@@ -36,8 +36,11 @@ body {
         #page-content-wrapper {
 
             .planets {
+                height: 650px;
+                width:100%;
+
                 #mercury {
-                    @include planetPosition(100px, 60%, 393px);
+                    @include planetPosition(100px, 60%, 60%);
                     text-align: center;
 
                     img {
@@ -47,35 +50,35 @@ body {
                 }
 
                 #venus {
-                    @include planetPosition(100px, 55%, 160px);
+                    @include planetPosition(100px, 59%, 24%);
                 }
 
                 #earth {
-                    @include planetPosition(100px, 30%, 70px);
+                    @include planetPosition(100px, 30%, 11%);
                 }
 
                 #mars {
-                    @include planetPosition(100px, 20%, 240px);
+                    @include planetPosition(100px, 20%, 35%);
                 }
 
                 #jupiter {
-                    @include planetPosition(100px, 28%, 427px);
+                    @include planetPosition(100px, 28%, 60%);
                 }
 
                 #saturn {
-                    @include planetPosition(100px, 36%, 584px);
+                    @include planetPosition(100px, 41%, 80%);
                 }
 
                 #uranus {
-                    @include planetPosition(100px, 80%, 530px);
+                    @include planetPosition(100px, 80%, 77%);
                 }
 
                 #neptune {
-                    @include planetPosition(100px, 74%, 340px);
+                    @include planetPosition(100px, 74%, 50%);
                 }
 
                 #pluto {
-                    @include planetPosition(100px, 90%, 460px);
+                    @include planetPosition(100px, 90%, 75%);
                 }
 
                 .text {
@@ -124,12 +127,12 @@ body {
                 background-color: transparent;
                 border: none;
                 padding: 50px;
+                color: $beige;
+                font-weight: bold;
+                font-size: 21px;
 
                 .history-content {
                     p {
-                        font-weight: bold;
-                        font-size: 21px;
-                        color: $beige;
                     }
                 }
 
