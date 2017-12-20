@@ -10,66 +10,69 @@ body {
     background-position: center; }
     body #wrapper #sidebar-wrapper .sidebar-nav li {
       padding-top: 5px; }
-  body #wrapper #page-content-wrapper .planets #mercury {
-    position: absolute;
-    max-width: 100px;
-    left: 60%;
-    top: 393px;
-    text-align: center; }
-    body #wrapper #page-content-wrapper .planets #mercury img {
-      max-width: 40px;
-      margin-left: 5px; }
-  body #wrapper #page-content-wrapper .planets #venus {
-    position: absolute;
-    max-width: 100px;
-    left: 55%;
-    top: 160px; }
-  body #wrapper #page-content-wrapper .planets #earth {
-    position: absolute;
-    max-width: 100px;
-    left: 30%;
-    top: 70px; }
-  body #wrapper #page-content-wrapper .planets #mars {
-    position: absolute;
-    max-width: 100px;
-    left: 20%;
-    top: 240px; }
-  body #wrapper #page-content-wrapper .planets #jupiter {
-    position: absolute;
-    max-width: 100px;
-    left: 28%;
-    top: 427px; }
-  body #wrapper #page-content-wrapper .planets #saturn {
-    position: absolute;
-    max-width: 100px;
-    left: 36%;
-    top: 584px; }
-  body #wrapper #page-content-wrapper .planets #uranus {
-    position: absolute;
-    max-width: 100px;
-    left: 80%;
-    top: 530px; }
-  body #wrapper #page-content-wrapper .planets #neptune {
-    position: absolute;
-    max-width: 100px;
-    left: 74%;
-    top: 340px; }
-  body #wrapper #page-content-wrapper .planets #pluto {
-    position: absolute;
-    max-width: 100px;
-    left: 90%;
-    top: 460px; }
-  body #wrapper #page-content-wrapper .planets .text {
-    background: #000;
-    text-align: center;
-    width: 108%;
-    border-radius: 7px;
-    padding-top: 3px;
-    margin: 10px 0 0 0; }
-    body #wrapper #page-content-wrapper .planets .text p {
-      color: #fff;
-      font-size: 16px;
-      text-transform: uppercase; }
+  body #wrapper #page-content-wrapper .planets {
+    height: 650px;
+    width: 100%; }
+    body #wrapper #page-content-wrapper .planets #mercury {
+      position: absolute;
+      max-width: 100px;
+      left: 60%;
+      top: 60%;
+      text-align: center; }
+      body #wrapper #page-content-wrapper .planets #mercury img {
+        max-width: 40px;
+        margin-left: 5px; }
+    body #wrapper #page-content-wrapper .planets #venus {
+      position: absolute;
+      max-width: 100px;
+      left: 59%;
+      top: 24%; }
+    body #wrapper #page-content-wrapper .planets #earth {
+      position: absolute;
+      max-width: 100px;
+      left: 30%;
+      top: 11%; }
+    body #wrapper #page-content-wrapper .planets #mars {
+      position: absolute;
+      max-width: 100px;
+      left: 20%;
+      top: 35%; }
+    body #wrapper #page-content-wrapper .planets #jupiter {
+      position: absolute;
+      max-width: 100px;
+      left: 28%;
+      top: 60%; }
+    body #wrapper #page-content-wrapper .planets #saturn {
+      position: absolute;
+      max-width: 100px;
+      left: 41%;
+      top: 80%; }
+    body #wrapper #page-content-wrapper .planets #uranus {
+      position: absolute;
+      max-width: 100px;
+      left: 80%;
+      top: 77%; }
+    body #wrapper #page-content-wrapper .planets #neptune {
+      position: absolute;
+      max-width: 100px;
+      left: 74%;
+      top: 50%; }
+    body #wrapper #page-content-wrapper .planets #pluto {
+      position: absolute;
+      max-width: 100px;
+      left: 90%;
+      top: 75%; }
+    body #wrapper #page-content-wrapper .planets .text {
+      background: #000;
+      text-align: center;
+      width: 108%;
+      border-radius: 7px;
+      padding-top: 3px;
+      margin: 10px 0 0 0; }
+      body #wrapper #page-content-wrapper .planets .text p {
+        color: #fff;
+        font-size: 16px;
+        text-transform: uppercase; }
   body #wrapper .background .bg-mo {
     display: none; }
   body #wrapper .background .bg-mo1 {
@@ -86,11 +89,10 @@ body {
     #top #links .modal-dialog .modal-content {
       background-color: transparent;
       border: none;
-      padding: 50px; }
-      #top #links .modal-dialog .modal-content .history-content p {
-        font-weight: bold;
-        font-size: 21px;
-        color: #c8b89a; }
+      padding: 50px;
+      color: #c8b89a;
+      font-weight: bold;
+      font-size: 21px; }
       #top #links .modal-dialog .modal-content .modal-header {
         border: none;
         padding: 0; }
