@@ -6,6 +6,8 @@
 body {
   transition: 0.3s;
   background-image: url("../images/background.jpg"); }
+  body #wrapper .slick-slide {
+    height: 160px; }
   body #wrapper #sidebar-wrapper {
     background-position: center; }
     body #wrapper #sidebar-wrapper .sidebar-nav li {
