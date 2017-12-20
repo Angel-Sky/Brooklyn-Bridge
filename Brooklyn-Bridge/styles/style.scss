@@ -44,12 +44,11 @@ body {
           font-family: "AdobeDevanagari-Regular",sans-serif;
         }
       }
-      .close {
+      .close-red {
         font-family: "RetroComputer",sans-serif;
         color: red;
         font-size: 120%;
         text-align: right;
-        padding-right: 11%;
         opacity: 1;
         &:hover {
           cursor: pointer;
