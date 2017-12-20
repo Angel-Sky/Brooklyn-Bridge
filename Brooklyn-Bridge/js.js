@@ -176,7 +176,7 @@ $(document).ready(function () {
                     let votInputDiv = $('<div>').addClass('voteInput').attr('id', planetName +'2')
                         .append($('<input type="radio" id="'+ planetName
                             +'" name="savePlannet" value="'+ planetName
-                            + '"><label for="'+ planetName +'">'+ planetName +'</label>'));
+                            + '"><label for="'+ planetName +'"><em>'+ planetName +'</em></label>'));
 
                     $('#savePlanet')
                         .append(votInputDiv);
