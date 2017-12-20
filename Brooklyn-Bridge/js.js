@@ -121,7 +121,7 @@ $(document).ready(function () {
         },400);
 
         $.ajax({
-            url: 'https://solar-system-3699c.firebaseio.com/.json',
+            url: 'https://solarsystem-f7dec.firebaseio.com/.json',
             success: function (data) {
                 ajaxSuccess(data, planetName);
             },
@@ -145,7 +145,7 @@ $(document).ready(function () {
         renderHistory(histories);
     }
     function getAllHistory() {
-        let requestURL = 'https://brooklynbridge-c825a.firebaseio.com/SolarSystem/History.json';
+        let requestURL = 'https://solarsystem-f7dec.firebaseio.com/SolarSystem/Planets/History/.json';
         $.get(requestURL)
             .then(renderHistory)
             .catch((err) => console.log(err));
