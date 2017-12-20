@@ -14,18 +14,20 @@ $(document).ready(function () {
     // Modal with info
     let wrapperBox = $('<div class="wrapperBox"></div>');
     bigBox.append(wrapperBox);
-    function ajaxSuccess(json, planetName) {
+    function ajaxSuccess(json, planetName, xi, yi, planetId) {
         for (let i in json) {
             let solarSystem = json[i];
             for (let k in solarSystem) {
                 let allPlanets = solarSystem[k];
                 let singlePlanet = allPlanets[planetName];
-                showClickedPlanetData(singlePlanet);
+                showClickedPlanetData(singlePlanet, xi, yi, planetId);
             }
         }
     }
-    function showClickedPlanetData(singlePlanet) {
+
+    function showClickedPlanetData(singlePlanet, xi, yi, planetId) {
         bigBox.css({display: 'block'});
+        $('#' + planetId).css({pointerEvents: 'none'});
         //append planet info
         wrapperBox.append($('<div class="planets-info-wrapper">' +
             '<div class="planets-info">' +
@@ -63,16 +65,16 @@ $(document).ready(function () {
             '<div class="col-xs-12 col-sm-12 col-md-12">' +
             '<div class="slider">' +
             '<div>' +
-            '<img src="images/1.jpg">' +
+            '<img src="images/'+ planetId +'/1.jpg">' +
             '</div>' +
             '<div>' +
-            '<img src="images/2.jpg">' +
+            '<img src="images/'+ planetId +'/2.jpg">' +
             '</div>' +
             '<div>' +
-            '<img src="images/3.jpg">' +
+            '<img src="images/'+ planetId +'/3.jpg">' +
             '</div>' +
             '<div>' +
-            '<img src="images/4.jpg">' +
+            '<img src="images/'+ planetId +'/4.jpg">' +
             '</div>' +
             '</div>' +
             '</div>' +
@@ -91,27 +93,30 @@ $(document).ready(function () {
         });
         //close X
         $('body').on('click', '.close-red', function removeInfoBubble() {
+          $('#' + planetId).css({pointerEvents: 'auto'});
             $('.planets-info-wrapper').remove();
 
             otherPlahets = $('.planets').find('.planet');
             otherPlahets.fadeIn(1000);
-            $('.active').animate({
+            $('#' + planetId).animate({
                 left: xi,
                 top: yi
             })
-
         });
-
     }
+
     $('.planet').click(function () {
         let otherPlahets = $('.planets').find('.planet').not(this);
         otherPlahets.fadeOut(1000);
         wrapperBox.empty();
         wrapper.addClass('toggled');
         let planetName = $(this).attr('data-planet');
-        let xi = $(this).offset().left;
-        let yi = $(this).offset().top;
-        $(this).addClass('active')
+        let planetId = $(this).attr('id');
+
+        let test = $(this).position();
+        let xi = test.left;
+        let yi = test.top;
+
         $(this).animate({
             left: xi - xi + 100,
             top: yi - yi + 138,
@@ -120,7 +125,8 @@ $(document).ready(function () {
         $.ajax({
             url: 'https://solarsystem-f7dec.firebaseio.com/.json',
             success: function (data) {
-                ajaxSuccess(data, planetName);
+                console.log(data);
+                ajaxSuccess(data, planetName, xi, yi, planetId);
             },
             error: function () {
                 wrapperBox.append('<div class="error">There was error we are sorry.</div>');
@@ -227,8 +233,8 @@ $(document).ready(function () {
         $.ajax({
             url: 'https://solarsystem-f7dec.firebaseio.com/SolarSystem.json',
             success: renderSavePlanet,
-            error: function (e) {
-                console.log('Something went wrong (database error)');
+            error: function () {
+                console.log('Something went wrong.');
             }
         })
     }
@@ -255,15 +261,14 @@ $(document).ready(function () {
 
         });
     }
+
     function renderHistoryData(histories) {
         renderHistory(histories);
     }
+
     function getAllHistory() {
         let requestURL = 'https://solarsystem-f7dec.firebaseio.com/SolarSystem/Planets/History/.json';
-        $.get(requestURL)
-            .then(renderHistory)
-            .catch((err) => console.log(err));
+        $.get(requestURL).then(renderHistory).catch((err) => console.log(err));
     }
-    getAllHistory()
-
+    getAllHistory();
 });
