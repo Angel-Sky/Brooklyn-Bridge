@@ -23,6 +23,10 @@ body {
     background-image: url('../images/background.jpg');
 
     #wrapper {
+        .slick-slide {
+            height: 160px;
+        }
+
         #sidebar-wrapper {
             background-position: center;
 
@@ -37,7 +41,7 @@ body {
 
             .planets {
                 height: 650px;
-                width:100%;
+                width: 100%;
 
                 #mercury {
                     @include planetPosition(100px, 60%, 60%);
