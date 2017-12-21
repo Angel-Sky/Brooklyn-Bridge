@@ -120,8 +120,8 @@ $(document).ready(function () {
         let yi = test.top;
 
         $(this).animate({
-            left: xi - xi + 100,
-            top: yi - yi + 138,
+            left: xi - xi + 70,
+            top: yi - yi + 170,
         },400);
 
         $.ajax({
