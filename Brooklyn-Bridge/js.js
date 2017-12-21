@@ -125,7 +125,7 @@ $(document).ready(function () {
         $.ajax({
             url: 'https://solarsystem-f7dec.firebaseio.com/.json',
             success: function (data) {
-                //console.log(data);
+                console.log(data);
                 ajaxSuccess(data, planetName, xi, yi, planetId);
             },
             error: function () {
@@ -229,7 +229,7 @@ $(document).ready(function () {
         });
     }
 
-    function loadFromDatabase(){
+    function getSavePlanetData(){
         $.ajax({
             url: 'https://solarsystem-f7dec.firebaseio.com/SolarSystem.json',
             success: renderSavePlanet,
@@ -239,7 +239,6 @@ $(document).ready(function () {
         })
     }
 
-    loadFromDatabase();
     //---Iva Save Planet END---
 
     //deni history link
@@ -262,13 +261,15 @@ $(document).ready(function () {
         });
     }
 
-    function renderHistoryData(histories) {
-        renderHistory(histories);
-    }
-
     function getAllHistory() {
         let requestURL = 'https://solarsystem-f7dec.firebaseio.com/SolarSystem/Planets/History/.json';
         $.get(requestURL).then(renderHistory).catch((err) => console.log(err));
     }
-    getAllHistory();
+
+    function getDatabaseData(){
+        getSavePlanetData();
+        getAllHistory();
+    }
+
+    getDatabaseData()
 });
