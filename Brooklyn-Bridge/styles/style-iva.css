@@ -40,7 +40,8 @@ body {
         width: 170px;
         margin: 0;
         padding: 0;
-        list-style: none; }
+        list-style: none;
+        text-transform: uppercase; }
         body #wrapper #sidebar-wrapper .sidebar-nav li {
           text-align: center;
           background-color: #c8b89a;
