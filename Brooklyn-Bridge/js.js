@@ -16,11 +16,13 @@ $(document).ready(function () {
     bigBox.append(wrapperBox);
     function ajaxSuccess(json, planetName, xi, yi, planetId) {
         for (let i in json) {
-            let solarSystem = json[i];
-            for (let k in solarSystem) {
-                let allPlanets = solarSystem[k];
-                let singlePlanet = allPlanets[planetName];
-                showClickedPlanetData(singlePlanet, xi, yi, planetId);
+            let allTables = json[i];
+            for (let table in allTables){
+                if (table === 'Planets'){
+                    let allPlanets = allTables[table];
+                    let singlePlanet = allPlanets[planetName];
+                    showClickedPlanetData(singlePlanet, xi, yi, planetId);
+                }
             }
         }
     }
@@ -305,7 +307,6 @@ $(document).ready(function () {
                     $('<p>').text(planetObj['Present'])
                         .addClass('infoDiv')
                         .appendTo(accordion2);
-
 
                     accordionData();
                 }
