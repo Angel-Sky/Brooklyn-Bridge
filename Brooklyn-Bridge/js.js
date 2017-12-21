@@ -37,7 +37,7 @@ $(document).ready(function () {
             '<p class="overwiev"><span>Overview: </span>' + singlePlanet['overview'] + '</p>' +
             '</div>' +
             '<div class="col-xs-1 col-sm-1 col-md-1">' +
-            '<p class="close-red">x' +
+            '<p class="close">x' +
             '</p>' +
             '</div>' +
             '</div>' +
