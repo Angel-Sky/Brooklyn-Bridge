@@ -121,7 +121,7 @@ $(document).ready(function () {
 
         $(this).animate({
             left: xi - xi + 70,
--           top: yi - yi + 170,
+            top: yi - yi + 170,
         },400);
 
         $.ajax({
