@@ -1,14 +1,14 @@
 $(document).ready(function () {
     let bigBox = $('.big-box');
-    bigBox.css({display: 'none'});
+    bigBox.css({ display: 'none' });
     let windowWidth = $(window).width();
     let error = '';
     let wrapper = $('#wrapper');
-    bigBox.width(Number(windowWidth - 400) + 'px');
+    bigBox.width('80%');
 
     //On resize to change the size of the Modal
     $(window).resize(function () {
-        bigBox.width(Number($(window).width() - 300) + 'px');
+        bigBox.width('80%');
     });
 
     // Modal with info
@@ -17,8 +17,8 @@ $(document).ready(function () {
     function ajaxSuccess(json, planetName, xi, yi, planetId) {
         for (let i in json) {
             let allTables = json[i];
-            for (let table in allTables){
-                if (table === 'Planets'){
+            for (let table in allTables) {
+                if (table === 'Planets') {
                     let allPlanets = allTables[table];
                     let singlePlanet = allPlanets[planetName];
                     showClickedPlanetData(singlePlanet, xi, yi, planetId);
@@ -28,8 +28,8 @@ $(document).ready(function () {
     }
 
     function showClickedPlanetData(singlePlanet, xi, yi, planetId) {
-        bigBox.css({display: 'block'});
-        $('#' + planetId).css({pointerEvents: 'none'});
+        bigBox.css({ display: 'block' });
+        $('#' + planetId).css({ pointerEvents: 'none' });
         //append planet info
         wrapperBox.append($('<div class="planets-info-wrapper">' +
             '<div class="planets-info">' +
@@ -39,7 +39,7 @@ $(document).ready(function () {
             '<p class="overwiev"><span>Overview: </span>' + singlePlanet['overview'] + '</p>' +
             '</div>' +
             '<div class="col-xs-1 col-sm-1 col-md-1">' +
-            '<p class="close-red">x' +
+            '<p class="close">x' +
             '</p>' +
             '</div>' +
             '</div>' +
@@ -67,16 +67,16 @@ $(document).ready(function () {
             '<div class="col-xs-12 col-sm-12 col-md-12">' +
             '<div class="slider">' +
             '<div>' +
-            '<img src="images/'+ planetId +'/1.jpg">' +
+            '<img src="images/' + planetId + '/1.jpg">' +
             '</div>' +
             '<div>' +
-            '<img src="images/'+ planetId +'/2.jpg">' +
+            '<img src="images/' + planetId + '/2.jpg">' +
             '</div>' +
             '<div>' +
-            '<img src="images/'+ planetId +'/3.jpg">' +
+            '<img src="images/' + planetId + '/3.jpg">' +
             '</div>' +
             '<div>' +
-            '<img src="images/'+ planetId +'/4.jpg">' +
+            '<img src="images/' + planetId + '/4.jpg">' +
             '</div>' +
             '</div>' +
             '</div>' +
@@ -94,8 +94,8 @@ $(document).ready(function () {
             arrows: false,
         });
         //close X
-        $('body').on('click', '.close-red', function removeInfoBubble() {
-          $('#' + planetId).css({pointerEvents: 'auto'});
+        $('body').on('click', '.close', function removeInfoBubble() {
+            $('#' + planetId).css({ pointerEvents: 'auto' });
             $('.planets-info-wrapper').remove();
 
             otherPlahets = $('.planets').find('.planet');
@@ -111,7 +111,6 @@ $(document).ready(function () {
         let otherPlahets = $('.planets').find('.planet').not(this);
         otherPlahets.fadeOut(1000);
         wrapperBox.empty();
-        wrapper.addClass('toggled');
         let planetName = $(this).attr('data-planet');
         let planetId = $(this).attr('id');
 
@@ -120,9 +119,9 @@ $(document).ready(function () {
         let yi = test.top;
 
         $(this).animate({
-            left: xi - xi + 70,
-            top: yi - yi + 170,
-        },400);
+            left: xi - xi + 300,
+            top: yi - yi + 138,
+        }, 400);
 
         $.ajax({
             url: 'https://solarsystem-f7dec.firebaseio.com/.json',
@@ -137,18 +136,18 @@ $(document).ready(function () {
     });
 
     //---Iva Save Planet---
-    function clearData(){
+    function clearData() {
         $('.modal-header').empty();
         $('.modal-body').empty();
         $('.modal-footer').empty();
     }
 
-    function renderSavePlanet(SolarSystem){
+    function renderSavePlanet(SolarSystem) {
         $('#links').on('click', '.save-planet', function (e) {
             e.preventDefault();
             clearData();
-            let modalHead =  $('.modal-header');
-            let modalBody =  $('.modal-body');
+            let modalHead = $('.modal-header');
+            let modalBody = $('.modal-body');
 
             $('<h1>').addClass('modal-title').text('Which planet do you want to save?')
                 .appendTo(modalHead);
@@ -175,17 +174,17 @@ $(document).ready(function () {
     }
 
     function renderInputsAndChangeResult(SolarSystem) {
-        for (let planetName in SolarSystem){
+        for (let planetName in SolarSystem) {
             let min = 1;
             let parseMin = parseInt(min);
 
             let max = 100;
             let parseMax = parseInt(max);
 
-            let votInputDiv = $('<div>').addClass('voteInput').attr('id', planetName +'2')
-                .append($('<input type="radio" id="'+ planetName
-                    +'" name="savePlannet" value="'+ planetName
-                    + '"><label for="'+ planetName +'"><em>'+ planetName +'</em></label>'));
+            let votInputDiv = $('<div>').addClass('voteInput').attr('id', planetName + '2')
+                .append($('<input type="radio" id="' + planetName
+                    + '" name="savePlannet" value="' + planetName
+                    + '"><label for="' + planetName + '"><em>' + planetName + '</em></label>'));
 
             $('#savePlanet')
                 .append(votInputDiv);
@@ -201,9 +200,9 @@ $(document).ready(function () {
 
     function renderProgressBar(parseProgressBarWidth, votInputDiv) {
         $('<div class="progress">\n' +
-            '<div class="progress-bar progress-bar-striped bg-info" aria-valuenow="'+
-            parseProgressBarWidth +'%" aria-valuemin="0" aria-valuemax="100" role="progressbar" style="width: '+
-            parseProgressBarWidth +'%" >'+ parseProgressBarWidth +'%</div>' + '</div>')
+            '<div class="progress-bar progress-bar-striped bg-info" aria-valuenow="' +
+            parseProgressBarWidth + '%" aria-valuemin="0" aria-valuemax="100" role="progressbar" style="width: ' +
+            parseProgressBarWidth + '%" >' + parseProgressBarWidth + '%</div>' + '</div>')
             .appendTo(votInputDiv);
     }
 
@@ -212,23 +211,23 @@ $(document).ready(function () {
             e.preventDefault();
             let checkedPlanet = $('input[name=savePlannet]:checked').val();
 
-            if(checkedPlanet===planetName){
-                let progressDiv = $('#'+checkedPlanet+'2').find($('.progress'));
-                let alreadyRandomVal = $('#'+checkedPlanet+'2').find($('.progress')).children().text();
+            if (checkedPlanet === planetName) {
+                let progressDiv = $('#' + checkedPlanet + '2').find($('.progress'));
+                let alreadyRandomVal = $('#' + checkedPlanet + '2').find($('.progress')).children().text();
                 let parseRandomVal = parseInt(alreadyRandomVal);
                 progressDiv.empty().hide();
 
-                renderProgressBar(parseRandomVal+1, votInputDiv);
+                renderProgressBar(parseRandomVal + 1, votInputDiv);
 
                 $('#btnSave').attr("disabled", true);
                 $('<p>')
-                    .addClass('alert alert-info').text("You successfully voted for "+ checkedPlanet + "! Thank you!")
+                    .addClass('alert alert-info').text("You successfully voted for " + checkedPlanet + "! Thank you!")
                     .appendTo($('.modal-footer'));
             }
         });
     }
 
-    function getSavePlanetData(){
+    function getSavePlanetData() {
         $.ajax({
             url: 'https://solarsystem-f7dec.firebaseio.com/SolarSystem/Planets.json',
             success: renderSavePlanet,
@@ -250,7 +249,7 @@ $(document).ready(function () {
     }
 
     function accordionData() {
-        $('.accortion-title').on('click', function(e) {
+        $('.accortion-title').click(function (e) {
             e.preventDefault();
 
             let $this = $(this);
@@ -259,25 +258,27 @@ $(document).ready(function () {
                 $this.next().removeClass('show');
                 $this.next().slideUp(350);
             } else {
-                $this.parent().find('.infoDiv').removeClass('show');
-                $this.parent().find('.infoDiv').slideUp(350);
+                $this.find('.infoDiv').removeClass('show');
+                $this.find('.infoDiv').slideUp(350);
                 $this.next().toggleClass('show');
                 $this.next().slideToggle(350);
             }
         });
     }
 
-    function renderMenuData(solarSystem){
+    function renderMenuData(solarSystem) {
         $('.sidebar-nav').on('click', '.menuPlanet', function (e) {
             e.preventDefault();
             clearData();
-            let modalHead =  $('.modal-header');
-            let modalBody =  $('.modal-body');
+            let modalHead = $('.modal-header');
+            let modalBody = $('.modal-body');
 
             let planetName = $(this).text();
-            for(let index in solarSystem){
+            for (let index in solarSystem) {
                 let planetObj = solarSystem[index];
-                if (planetObj['name']===planetName){
+                if (planetObj['name'] === planetName) {
+                    //console.log(planetObj['History']);
+
                     $('<h1>')
                         .text(planetObj['name'])
                         .appendTo(modalHead);
@@ -290,20 +291,21 @@ $(document).ready(function () {
                         .text(planetObj['description'])
                         .appendTo(modalBody);
 
-                    let historyContent = $('<p>').text(planetObj['History'])
-                        .addClass('infoDiv');
-                    let historyDiv = $('<div>').addClass('accortion-title').text('History');
-
-                    let presentContent = $('<p>').text(planetObj['Present'])
-                        .addClass('infoDiv');
-                    let presentDiv = $('<div>').addClass('accortion-title').text('Present');
-
                     let accordion = $('<div>').addClass('accordion')
-                        .append(historyDiv)
-                        .append(historyContent)
-                        .append(presentDiv)
-                        .append(presentContent)
                         .appendTo(modalBody);
+
+                    let accordion2 = $('<div>').addClass('accordion')
+                        .appendTo(modalBody);
+
+                    let historyDiv = $('<div>').addClass('accortion-title').text('History').appendTo(accordion);
+                    $('<p>').text(planetObj['History'])
+                        .addClass('infoDiv')
+                        .appendTo(accordion);
+
+                    let presentDiv = $('<div>').addClass('accortion-title').text('Present').appendTo(accordion2);
+                    $('<p>').text(planetObj['Present'])
+                        .addClass('infoDiv')
+                        .appendTo(accordion2);
 
                     accordionData();
                 }
@@ -325,7 +327,7 @@ $(document).ready(function () {
             for (let key in histories) {
                 let history = histories[key];
                 let historyDiv = $('<div class="history-content">')
-                    .append('<p>' + history+ '</p>');
+                    .append('<p>' + history + '</p>');
                 $('#history .modal-body').append(historyDiv);
             }
 
@@ -337,7 +339,7 @@ $(document).ready(function () {
         $.get(requestURL).then(renderHistory).catch((err) => console.log(err));
     }
 
-    function getDatabaseData(){
+    function getDatabaseData() {
         getSavePlanetData();
         getAllHistory();
         getMenuData();
