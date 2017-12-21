@@ -272,8 +272,8 @@ $(document).ready(function () {
     }
 
     getDatabaseData()
-});
- function RenderMenuData(planets) {
+    
+    function RenderMenuData(planets) {
         clearData();
             let modalBody = $('<div class="modal-body">')
                 .append('<div class="planet-content">');
@@ -309,3 +309,4 @@ $(document).ready(function () {
     }
     getSingleMenuData();
 });
+
