@@ -173,29 +173,26 @@ $(document).ready(function () {
     }
 
     function renderInputsAndChangeResult(SolarSystem) {
-        for (let value in SolarSystem){
-            let planets = SolarSystem[value];
-            for (let planetName in planets){
-                if (planetName !== 'History') {
-                    let min = 1;
-                    let parseMin = parseInt(min);
+        for (let planetName in SolarSystem){
+            let min = 1;
+            let parseMin = parseInt(min);
 
-                    let max = 100;
-                    let parseMax = parseInt(max);
+            let max = 100;
+            let parseMax = parseInt(max);
 
-                    let votInputDiv = $('<div>').addClass('voteInput').attr('id', planetName +'2')
-                        .append($('<input type="radio" id="'+ planetName
-                            +'" name="savePlannet" value="'+ planetName
-                            + '"><label for="'+ planetName +'"><em>'+ planetName +'</em></label>'));
+            let votInputDiv = $('<div>').addClass('voteInput').attr('id', planetName +'2')
+                .append($('<input type="radio" id="'+ planetName
+                    +'" name="savePlannet" value="'+ planetName
+                    + '"><label for="'+ planetName +'"><em>'+ planetName +'</em></label>'));
 
-                    $('#savePlanet')
-                        .append(votInputDiv);
+            $('#savePlanet')
+                .append(votInputDiv);
 
-                    renderProgressBar(getRandomInt(parseMin, parseMax), votInputDiv);
-                    btnOnClick(planetName, votInputDiv);
-                }
-            }
+            renderProgressBar(getRandomInt(parseMin, parseMax), votInputDiv);
+            btnOnClick(planetName, votInputDiv);
         }
+
+
         $('<button id="btnSave" class="btn btn-primary">Save Planet</button>')
             .appendTo($('#savePlanet'));
     }
@@ -229,9 +226,10 @@ $(document).ready(function () {
         });
     }
 
-    function loadFromDatabase(){
+    function getSavePlanetData(){
         $.ajax({
-            url: 'https://solarsystem-f7dec.firebaseio.com/SolarSystem.json',
+            url: 'https://brooklynbridge-jsproject.firebaseio.com/SolarSystem/Planets.json',
+            //Deni's link will be https://solarsystem-f7dec.firebaseio.com/SolarSystem/Planets.json
             success: renderSavePlanet,
             error: function () {
                 console.log('Something went wrong.');
@@ -239,8 +237,83 @@ $(document).ready(function () {
         })
     }
 
-    loadFromDatabase();
-    //---Iva Save Planet END---
+    //---Iva Menu---
+    function getMenuData() {
+        $.ajax({
+            url: 'https://solarsystem-f7dec.firebaseio.com/SolarSystem/MenuData.json',
+            success: renderMenuData,
+            error: function (e) {
+                console.log('Error taking Menu Data');
+            }
+        });
+    }
+
+    function accordionData() {
+        $('.accortion-title').click(function(e) {
+            e.preventDefault();
+
+            let $this = $(this);
+
+            if ($this.next().hasClass('show')) {
+                $this.next().removeClass('show');
+                $this.next().slideUp(350);
+            } else {
+                $this.find('.infoDiv').removeClass('show');
+                $this.find('.infoDiv').slideUp(350);
+                $this.next().toggleClass('show');
+                $this.next().slideToggle(350);
+            }
+        });
+    }
+
+    function renderMenuData(solarSystem){
+        $('.sidebar-nav').on('click', '.menuPlanet', function (e) {
+            e.preventDefault();
+            clearData();
+            let modalHead =  $('.modal-header');
+            let modalBody =  $('.modal-body');
+
+            let planetName = $(this).text();
+            for(let index in solarSystem){
+                let planetObj = solarSystem[index];
+                if (planetObj['name']===planetName){
+                    //console.log(planetObj['History']);
+
+                    $('<h1>')
+                        .text(planetObj['name'])
+                        .appendTo(modalHead);
+
+                    $(`<button type="button" class="close" data-dismiss="modal">&times;</button>`)
+                        .appendTo(modalHead)
+                        .css('cursor', 'pointer');
+
+                    $('<h3>')
+                        .text(planetObj['description'])
+                        .appendTo(modalBody);
+
+                    let accordion = $('<div>').addClass('accordion')
+                        .appendTo(modalBody);
+
+                    let accordion2 = $('<div>').addClass('accordion')
+                        .appendTo(modalBody);
+
+                    let historyDiv = $('<div>').addClass('accortion-title').text('History').appendTo(accordion);
+                    $('<p>').text(planetObj['History'])
+                        .addClass('infoDiv')
+                        .appendTo(accordion);
+
+                    let presentDiv = $('<div>').addClass('accortion-title').text('Present').appendTo(accordion2);
+                    $('<p>').text(planetObj['Present'])
+                        .addClass('infoDiv')
+                        .appendTo(accordion2);
+
+
+                    accordionData();
+                }
+            }
+        })
+    }
+
 
     //deni history link
 
@@ -262,13 +335,17 @@ $(document).ready(function () {
         });
     }
 
-    function renderHistoryData(histories) {
-        renderHistory(histories);
-    }
-
     function getAllHistory() {
-        let requestURL = 'https://solarsystem-f7dec.firebaseio.com/SolarSystem/Planets/History/.json';
+        let requestURL = 'https://solarsystem-f7dec.firebaseio.com/SolarSystem/History.json';
+        //Deni's link will be https://solarsystem-f7dec.firebaseio.com/SolarSystem/History.json
         $.get(requestURL).then(renderHistory).catch((err) => console.log(err));
     }
-    getAllHistory();
+
+    function getDatabaseData(){
+        getSavePlanetData();
+        getAllHistory();
+        getMenuData();
+    }
+
+    getDatabaseData()
 });

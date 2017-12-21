@@ -26,15 +26,15 @@
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-            <li class='menuPlanet'>MERCURY</li>
-            <li class='menuPlanet'>VENUS</li>
-            <li class='menuPlanet'>EARTH</li>
-            <li class='menuPlanet'>MARS</li>
-            <li class='menuPlanet'>JUPITER</li>
-            <li class='menuPlanet'>SATURN</li>
-            <li class='menuPlanet'>URANUS</li>
-            <li class='menuPlanet'>NEPTUNE</li>
-            <li class='menuPlanet'>PLUTO</li>
+            <li><a data-toggle="modal" href="#menuModal" class="menuPlanet">Mercury</a></li>
+            <li><a data-toggle="modal" href="#menuModal" class="menuPlanet">Venus</a></li>
+            <li><a data-toggle="modal" href="#menuModal" class="menuPlanet">Earth</a></li>
+            <li><a data-toggle="modal" href="#menuModal" class="menuPlanet">Mars</a></li>
+            <li><a data-toggle="modal" href="#menuModal" class="menuPlanet">Jupiter</a></li>
+            <li><a data-toggle="modal" href="#menuModal" class="menuPlanet">Saturn</a></li>
+            <li><a data-toggle="modal" href="#menuModal" class="menuPlanet">Uranus</a></li>
+            <li><a data-toggle="modal" href="#menuModal" class="menuPlanet">Neptune</a></li>
+            <li><a data-toggle="modal" href="#menuModal" class="menuPlanet">Pluto</a></li>
         </ul>
     </div>
 
@@ -150,6 +150,17 @@
                 </div>
             </div>
         </div>
+
+        <!--Modal Menu-->
+        <div class="modal fade" id="menuModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header"></div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- /#page-content-wrapper -->
     <!-- page-background -->
@@ -174,6 +185,7 @@
     });
 </script>
 <script src="js.js"></script>
+<script src="renderMenu.js"></script>
 <!--<script src="jquery-3.2.1.min.js"></script>-->
 </body>
 
