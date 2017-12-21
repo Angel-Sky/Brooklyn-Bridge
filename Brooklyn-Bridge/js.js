@@ -39,7 +39,7 @@ $(document).ready(function () {
             '<p class="overwiev"><span>Overview: </span>' + singlePlanet['overview'] + '</p>' +
             '</div>' +
             '<div class="col-xs-1 col-sm-1 col-md-1">' +
-            '<p class="close">x' +
+            '<p class="close-red">x' +
             '</p>' +
             '</div>' +
             '</div>' +
@@ -94,7 +94,7 @@ $(document).ready(function () {
             arrows: false,
         });
         //close X
-        $('body').on('click', '.close', function removeInfoBubble() {
+        $('body').on('click', '.close-red', function removeInfoBubble() {
           $('#' + planetId).css({pointerEvents: 'auto'});
             $('.planets-info-wrapper').remove();
 
@@ -120,8 +120,8 @@ $(document).ready(function () {
         let yi = test.top;
 
         $(this).animate({
-            left: xi - xi + 100,
-            top: yi - yi + 138,
+            left: xi - xi + 70,
+-           top: yi - yi + 170,
         },400);
 
         $.ajax({
