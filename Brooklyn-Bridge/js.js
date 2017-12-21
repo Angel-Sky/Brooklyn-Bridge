@@ -273,7 +273,7 @@ $(document).ready(function () {
 
     getDatabaseData()
 });
-    function RenderMenuData(planets) {
+ function RenderMenuData(planets) {
         clearData();
             let modalBody = $('<div class="modal-body">')
                 .append('<div class="planet-content">');
@@ -296,7 +296,7 @@ $(document).ready(function () {
             $(`<button type="button" class="close" data-dismiss="modal">&times;</button>`)
                 .appendTo($('.modal-header'))
                 .css('cursor', 'pointer');
-            planetsName = $(this).find(".menu-links").text();   
+        planetsName = $(this).find(".menuPlanet").text();   
     }
     function renderMenuData(planets) {
         RenderMenuData(planets);
