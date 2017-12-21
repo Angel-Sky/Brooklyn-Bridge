@@ -34,6 +34,9 @@ body {
     //opacity: 0.6;
     .planets-info {
       padding: 2.5% 0 30% 12%;
+      .boxRow{
+        padding-left: 3%;
+      }
       .overwiev {
         padding-top: 5%;
         color: white;
@@ -44,15 +47,15 @@ body {
           font-family: "AdobeDevanagari-Regular",sans-serif;
         }
       }
-      .close-red {
+      .close {
         font-family: "RetroComputer",sans-serif;
         color: red;
-        font-size: 120%;
+        font-size: 130%;
         text-align: right;
         opacity: 1;
+        padding-top: 35%;
         &:hover {
           cursor: pointer;
-
         }
       }
       ul {

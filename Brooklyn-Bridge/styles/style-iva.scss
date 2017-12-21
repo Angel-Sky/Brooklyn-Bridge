@@ -115,35 +115,6 @@ body {
             }
           }
         }
-        .modal-dialog {
-          color: $beige;
-          .modal-content {
-            .modal-header {
-              padding: 5px 10px;
-            }
-            .modal-body {
-              form {
-                font-size: 18pt;
-                label {
-                  margin: 2px 7px;
-                }
-                #btnSave {
-                  margin-top: 35px;
-                  font-size: 20pt;
-                }
-              }
-              .progress{
-                height: 1.5rem;
-                .progress-bar{
-                  font-size: 12pt;
-                }
-              }
-            }
-            .modal-footer {
-              font-size: 18pt;
-            }
-          }
-        }
       }
 
         #logo {
@@ -163,6 +134,35 @@ body {
       width: 100%;
       position: absolute;
       padding: 15px;
+      .modal-dialog {
+        color: $beige;
+        .modal-content {
+          .modal-header {
+            padding: 5px 10px;
+          }
+          .modal-body {
+            form {
+              font-size: 18pt;
+              label {
+                margin: 2px 7px;
+              }
+              #btnSave {
+                margin-top: 35px;
+                font-size: 20pt;
+              }
+            }
+            .progress{
+              height: 1.5rem;
+              .progress-bar{
+                font-size: 12pt;
+              }
+            }
+          }
+          .modal-footer {
+            font-size: 18pt;
+          }
+        }
+      }
     }
   }
 }

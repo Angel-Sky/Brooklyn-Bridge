@@ -100,6 +100,46 @@ body {
                     }
                 }
             }
+            .close {
+                color: $red;
+                font-size: 50px;
+            }
+            .modal-dialog {
+                background-image: url('../images/pergament.png');
+
+                .modal-content {
+                    background-color: transparent;
+                    border: none;
+                    padding: 50px;
+                    color: $beige;
+                    font-weight: bold;
+                    font-size: 21px;
+
+                    .history-content {
+                        p {
+                        }
+                    }
+
+                    .modal-header {
+                        border: none;
+                        padding: 0;
+
+                        .modal-title {
+                            font-size: 30px;
+                            padding: 5px;
+                        }
+
+                       /* .close {
+                            color: $red;
+                            font-size: 50px;
+                        }*/
+                    }
+
+                    .modal-footer {
+                        border: none;
+                    }
+                }
+            }
         }
 
         .background {
@@ -122,45 +162,6 @@ body {
 
 #top {
     background-position: center;
-
-    #links {
-        .modal-dialog {
-            background-image: url('../images/pergament.png');
-
-            .modal-content {
-                background-color: transparent;
-                border: none;
-                padding: 50px;
-                color: $beige;
-                font-weight: bold;
-                font-size: 21px;
-
-                .history-content {
-                    p {
-                    }
-                }
-
-                .modal-header {
-                    border: none;
-                    padding: 0;
-
-                    .modal-title {
-                        font-size: 30px;
-                        padding: 5px;
-                    }
-
-                    .close {
-                        color: $red;
-                        font-size: 50px;
-                    }
-                }
-
-                .modal-footer {
-                    border: none;
-                }
-            }
-        }
-    }
 }
 
 
