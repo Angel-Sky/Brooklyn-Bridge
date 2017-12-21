@@ -138,7 +138,7 @@ body {
         color: $beige;
         .modal-content {
           .modal-header {
-            padding: 5px 10px;
+            padding: 5px 10px !important;
           }
           .modal-body {
             form {
@@ -160,6 +160,38 @@ body {
           }
           .modal-footer {
             font-size: 18pt;
+          }
+        }
+      }
+      #menuModal {
+        .modal-header {
+          h1 {
+            padding: 5px;
+            font-weight: bold;
+          }
+        }
+        .modal-body {
+          h3 {
+            font-weight: bold;
+            font-style: italic;
+            margin: -28px 0px 35px 0;
+          }
+          .accordion {
+            .accortion-title {
+              background-color: $beige;
+              color: $menuTextColor;
+              font-size: 20pt;
+              width: 270px;
+              text-align: center;
+              cursor: pointer;
+              border: 2px solid $menuTextColor;
+              margin: 10px;
+            }
+            .infoDiv {
+              //background-color: rgba(200, 184, 154, 0.2);
+              border-radius: 5px;
+              padding: 10px;
+            }
           }
         }
       }

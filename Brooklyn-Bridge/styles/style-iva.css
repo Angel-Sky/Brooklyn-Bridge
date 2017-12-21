@@ -98,7 +98,7 @@ body {
       body #wrapper #page-content-wrapper .modal-dialog {
         color: #c8b89a; }
         body #wrapper #page-content-wrapper .modal-dialog .modal-content .modal-header {
-          padding: 5px 10px; }
+          padding: 5px 10px !important; }
         body #wrapper #page-content-wrapper .modal-dialog .modal-content .modal-body form {
           font-size: 18pt; }
           body #wrapper #page-content-wrapper .modal-dialog .modal-content .modal-body form label {
@@ -112,6 +112,25 @@ body {
             font-size: 12pt; }
         body #wrapper #page-content-wrapper .modal-dialog .modal-content .modal-footer {
           font-size: 18pt; }
+      body #wrapper #page-content-wrapper #menuModal .modal-header h1 {
+        padding: 5px;
+        font-weight: bold; }
+      body #wrapper #page-content-wrapper #menuModal .modal-body h3 {
+        font-weight: bold;
+        font-style: italic;
+        margin: -28px 0px 35px 0; }
+      body #wrapper #page-content-wrapper #menuModal .modal-body .accordion .accortion-title {
+        background-color: #c8b89a;
+        color: #1A171B;
+        font-size: 20pt;
+        width: 270px;
+        text-align: center;
+        cursor: pointer;
+        border: 2px solid #1A171B;
+        margin: 10px; }
+      body #wrapper #page-content-wrapper #menuModal .modal-body .accordion .infoDiv {
+        border-radius: 5px;
+        padding: 10px; }
 
 @media (min-width: 488px) {
   #wrapper {
