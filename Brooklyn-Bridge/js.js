@@ -228,8 +228,7 @@ $(document).ready(function () {
 
     function getSavePlanetData(){
         $.ajax({
-            url: 'https://brooklynbridge-jsproject.firebaseio.com/SolarSystem/Planets.json',
-            //Deni's link will be https://solarsystem-f7dec.firebaseio.com/SolarSystem/Planets.json
+            url: 'https://solarsystem-f7dec.firebaseio.com/SolarSystem/Planets.json',
             success: renderSavePlanet,
             error: function () {
                 console.log('Something went wrong.');
@@ -337,7 +336,6 @@ $(document).ready(function () {
 
     function getAllHistory() {
         let requestURL = 'https://solarsystem-f7dec.firebaseio.com/SolarSystem/History.json';
-        //Deni's link will be https://solarsystem-f7dec.firebaseio.com/SolarSystem/History.json
         $.get(requestURL).then(renderHistory).catch((err) => console.log(err));
     }
 
