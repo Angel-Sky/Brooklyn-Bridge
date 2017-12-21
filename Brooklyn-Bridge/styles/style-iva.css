@@ -131,7 +131,8 @@ body {
         margin: 10px; }
       body #wrapper #page-content-wrapper #menuModal .modal-body .accordion .infoDiv {
         border-radius: 5px;
-        padding: 10px; }
+        padding: 10px;
+        display: none; }
 
 @media (min-width: 488px) {
   #wrapper {
