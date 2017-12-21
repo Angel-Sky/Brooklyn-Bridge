@@ -125,7 +125,7 @@ $(document).ready(function () {
         $.ajax({
             url: 'https://solarsystem-f7dec.firebaseio.com/.json',
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 ajaxSuccess(data, planetName, xi, yi, planetId);
             },
             error: function () {
@@ -229,7 +229,7 @@ $(document).ready(function () {
         });
     }
 
-    function getSavePlanetData(){
+    function loadFromDatabase(){
         $.ajax({
             url: 'https://solarsystem-f7dec.firebaseio.com/SolarSystem.json',
             success: renderSavePlanet,
@@ -239,6 +239,7 @@ $(document).ready(function () {
         })
     }
 
+    loadFromDatabase();
     //---Iva Save Planet END---
 
     //deni history link
@@ -261,52 +262,13 @@ $(document).ready(function () {
         });
     }
 
+    function renderHistoryData(histories) {
+        renderHistory(histories);
+    }
+
     function getAllHistory() {
         let requestURL = 'https://solarsystem-f7dec.firebaseio.com/SolarSystem/Planets/History/.json';
         $.get(requestURL).then(renderHistory).catch((err) => console.log(err));
     }
-
-    function getDatabaseData(){
-        getSavePlanetData();
-        getAllHistory();
-    }
-
-    getDatabaseData()
-    
-    function RenderMenuData(planets) {
-        clearData();
-            let modalBody = $('<div class="modal-body">')
-                .append('<div class="planet-content">');
-            let modalInDivs = $('<div class="modal-content">')
-                .append('<div class="modal-header">')
-                .append(modalBody);
-           
-            let modalOutDivs = $('<div class="modal-dialog">')
-                .append(modalInDivs);
-                
-         $('#menu-modals .modal')
-                .append(modalOutDivs);
-            
-            for (let key in planets) {
-                let planet = planets[key];
-                let planetDiv = $('<div class="planet-content">')
-                    .append('<p>' + planet['name']+ '</p>')
-                $('#menu-modals .modal .modal-body').append(planetDiv);
-            }   
-            $(`<button type="button" class="close" data-dismiss="modal">&times;</button>`)
-                .appendTo($('.modal-header'))
-                .css('cursor', 'pointer');
-        planetsName = $(this).find(".menuPlanet").text();   
-    }
-    function renderMenuData(planets) {
-        RenderMenuData(planets);
-    }
-    function getSingleMenuData(planetsName) {
-        let requestURL = 'https://solarsystem-f7dec.firebaseio.com/SolarSystem/Planets/'+planetsName+'/.json';
-        $.get(requestURL)
-            .then(RenderMenuData)
-            .catch((err) => console.log(err));
-    }
-    getSingleMenuData();
+    getAllHistory();
 });
-
