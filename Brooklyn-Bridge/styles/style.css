@@ -32,7 +32,7 @@ body .planets-info-wrapper {
       body .planets-info-wrapper .planets-info .overwiev span {
         color: #c8b89a;
         font-family: "AdobeDevanagari-Regular",sans-serif; }
-    body .planets-info-wrapper .planets-info .close {
+    body .planets-info-wrapper .planets-info .close-red {
       font-family: "RetroComputer",sans-serif;
       color: red;
       font-size: 130%;
