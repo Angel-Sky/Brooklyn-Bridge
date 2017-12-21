@@ -32,16 +32,16 @@ $(document).ready(function () {
         wrapperBox.append($('<div class="planets-info-wrapper">' +
             '<div class="planets-info">' +
             '<div class="container-fluid">' +
-            '<div class="row">' +
+            '<div class="row boxRow">' +
             '<div class="col-xs-11 col-sm-11 col-md-11">' +
             '<p class="overwiev"><span>Overview: </span>' + singlePlanet['overview'] + '</p>' +
             '</div>' +
             '<div class="col-xs-1 col-sm-1 col-md-1">' +
-            '<p class="close-red">x' +
+            '<p class="close">x' +
             '</p>' +
             '</div>' +
             '</div>' +
-            '<div class="row">' +
+            '<div class="row boxRow">' +
             ' <div class="col-xs-6 col-sm-6 col-md-6">' +
 
             ' <ul>' +
@@ -92,7 +92,7 @@ $(document).ready(function () {
             arrows: false,
         });
         //close X
-        $('body').on('click', '.close-red', function removeInfoBubble() {
+        $('body').on('click', '.close', function removeInfoBubble() {
           $('#' + planetId).css({pointerEvents: 'auto'});
             $('.planets-info-wrapper').remove();
 
@@ -125,7 +125,7 @@ $(document).ready(function () {
         $.ajax({
             url: 'https://solarsystem-f7dec.firebaseio.com/.json',
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 ajaxSuccess(data, planetName, xi, yi, planetId);
             },
             error: function () {
