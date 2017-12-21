@@ -92,7 +92,7 @@ $(document).ready(function () {
             arrows: false,
         });
         //close X
-        $('body').on('click', '.close-red', function removeInfoBubble() {
+        $('body').on('click', '.close', function removeInfoBubble() {
           $('#' + planetId).css({pointerEvents: 'auto'});
             $('.planets-info-wrapper').remove();
 
