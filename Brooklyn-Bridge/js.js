@@ -265,20 +265,18 @@ $(document).ready(function () {
             }
         });
     }
-
-    function renderMenuData(solarSystem) {
+    function renderMenuData(solarSystem){
         $('.sidebar-nav').on('click', '.menuPlanet', function (e) {
             e.preventDefault();
             clearData();
-            let modalHead = $('.modal-header');
-            let modalBody = $('.modal-body');
+            //removeInfoBubble();
+            let modalHead =  $('.modal-header');
+            let modalBody =  $('.modal-body');
 
             let planetName = $(this).text();
-            for (let index in solarSystem) {
+            for(let index in solarSystem){
                 let planetObj = solarSystem[index];
-                if (planetObj['name'] === planetName) {
-                    //console.log(planetObj['History']);
-
+                if (planetObj['name']===planetName){
                     $('<h1>')
                         .text(planetObj['name'])
                         .appendTo(modalHead);
@@ -291,21 +289,23 @@ $(document).ready(function () {
                         .text(planetObj['description'])
                         .appendTo(modalBody);
 
+                    let historyContent = $('<p>').text(planetObj['History'])
+                        .addClass('infoDiv')
+                        .css('display', 'none');
+
+                    let historyDiv = $('<div>').addClass('accortion-title').text('History');
+
+                    let presentContent = $('<p>').text(planetObj['Present'])
+                        .addClass('infoDiv')
+                        .css('display', 'none');
+                    let presentDiv = $('<div>').addClass('accortion-title').text('Present');
+
                     let accordion = $('<div>').addClass('accordion')
+                        .append(historyDiv)
+                        .append(historyContent)
+                        .append(presentDiv)
+                        .append(presentContent)
                         .appendTo(modalBody);
-
-                    let accordion2 = $('<div>').addClass('accordion')
-                        .appendTo(modalBody);
-
-                    let historyDiv = $('<div>').addClass('accortion-title').text('History').appendTo(accordion);
-                    $('<p>').text(planetObj['History'])
-                        .addClass('infoDiv')
-                        .appendTo(accordion);
-
-                    let presentDiv = $('<div>').addClass('accortion-title').text('Present').appendTo(accordion2);
-                    $('<p>').text(planetObj['Present'])
-                        .addClass('infoDiv')
-                        .appendTo(accordion2);
 
                     accordionData();
                 }
